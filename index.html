@@ -195,12 +195,12 @@
                 <!-- Mini Float Stats Overlay -->
                 <div class="absolute -bottom-6 -left-6 bg-white border border-slate-100 rounded-2xl p-4 shadow-xl hidden md:flex items-center space-x-4 z-20">
                     <div class="border-r border-slate-100 pr-4">
-                        <span class="text-lg font-black text-brand-700 block leading-none">145+</span>
+                        <span class="text-lg font-black text-brand-700 block leading-none">70+</span>
                         <span class="text-[9px] text-slate-400 font-extrabold uppercase tracking-wider mt-1 block">Total Kamar</span>
                     </div>
                     <div class="border-r border-slate-100 pr-4">
                         <span class="text-lg font-black text-brand-700 block leading-none">6</span>
-                        <span class="text-[9px] text-slate-400 font-extrabold uppercase tracking-wider mt-1 block">Gedung Cabang</span>
+                        <span class="text-[9px] text-slate-400 font-extrabold uppercase tracking-wider mt-1 block">Cabang</span>
                     </div>
                     <div>
                         <span class="text-lg font-black text-brand-700 block leading-none">100%</span>
@@ -381,10 +381,10 @@
                                 <i class="fa-solid fa-bed text-sm"></i>
                             </span>
                             <select id="room_type" required class="w-full pl-10 pr-4 py-3 input-premium rounded-xl text-sm focus:outline-none focus:bg-white transition-all appearance-none">
-                                <option value="" disabled selected>Pilih Tipe Kamar</option>
-                                <option value="Tipe Standard (Rp 750.000)">Tipe Standard - Rp 850.000</option>
-                                <option value="Tipe Premium (Rp 800.000)">Tipe Premium - Rp 900.000</option>
-                                <option value="Tipe Deluxe AC (Rp 850.000)">Tipe Deluxe AC - Rp 950.000</option>
+                                <option value="" disabled selected>Pilih Rate Kamar</option>
+                                <option value="Rate Hananny A (Rp 850.000)">Rp 850.000</option>
+                                <option value="Rate Hananny B (Rp 900.000)">Rp 900.000</option>
+                                <option value="Rate Hananny C (Rp 950.000)">Rp 950.000</option>
                             </select>
                         </div>
                     </div>
@@ -572,13 +572,13 @@
                     </p>
                 </div>
 
-                <!-- Tipe Kamar Links -->
+                <!-- Rate Kamar Links -->
                 <div>
-                    <h4 class="font-bold text-slate-200 text-sm mb-4 uppercase tracking-wider">Tipe Kamar</h4>
+                    <h4 class="font-bold text-slate-200 text-sm mb-4 uppercase tracking-wider">Rate Kamar</h4>
                     <ul class="space-y-2 text-xs md:text-sm text-slate-400">
-                        <li><a href="#harga" class="hover:text-brand-400 transition-colors">Tipe Standard (Kipas)</a></li>
-                        <li><a href="#harga" class="hover:text-brand-400 transition-colors">Tipe Premium (Sirkulasi Luas)</a></li>
-                        <li><a href="#harga" class="hover:text-brand-400 transition-colors">Tipe Deluxe AC (K. Mandi Dalam)</a></li>
+                        <li><a href="#harga" class="hover:text-brand-400 transition-colors">Tipe 850.000</a></li>
+                        <li><a href="#harga" class="hover:text-brand-400 transition-colors">Tipe 900.000</a></li>
+                        <li><a href="#harga" class="hover:text-brand-400 transition-colors">Tipe 950.000</a></li>
                     </ul>
                 </div>
 
@@ -698,21 +698,21 @@
                     <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
                         <!-- Foto 1 -->
                         <div class="bg-slate-950 p-3 rounded-xl border border-slate-850 space-y-2">
-                            <span class="text-[10px] font-bold text-brand-300 block">Foto 1 (Deluxe AC)</span>
+                            <span class="text-[10px] font-bold text-brand-300 block">Foto 1 (Area Kamar)</span>
                             <input type="file" id="file-kamar-1" accept="image/*" onchange="previewLocalImage(this, 'img-kamar-1')" class="hidden">
                             <button type="button" onclick="document.getElementById('file-kamar-1').click()" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] py-1.5 px-2 rounded font-semibold text-center block transition-colors">Pilih File</button>
                             <input id="url-kamar-1" type="text" class="w-full bg-slate-900 border border-slate-800 p-1.5 rounded text-[10px] text-white focus:outline-none" placeholder="Tautan / Nama file">
                         </div>
                         <!-- Foto 2 -->
                         <div class="bg-slate-950 p-3 rounded-xl border border-slate-850 space-y-2">
-                            <span class="text-[10px] font-bold text-brand-300 block">Foto 2 (Premium)</span>
+                            <span class="text-[10px] font-bold text-brand-300 block">Foto 2 (Sirkulasi Baik)</span>
                             <input type="file" id="file-kamar-2" accept="image/*" onchange="previewLocalImage(this, 'img-kamar-2')" class="hidden">
                             <button type="button" onclick="document.getElementById('file-kamar-2').click()" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] py-1.5 px-2 rounded font-semibold text-center block transition-colors">Pilih File</button>
                             <input id="url-kamar-2" type="text" class="w-full bg-slate-900 border border-slate-800 p-1.5 rounded text-[10px] text-white focus:outline-none" placeholder="Tautan / Nama file">
                         </div>
                         <!-- Foto 3 -->
                         <div class="bg-slate-950 p-3 rounded-xl border border-slate-850 space-y-2">
-                            <span class="text-[10px] font-bold text-brand-300 block">Foto 3 (Higienis)</span>
+                            <span class="text-[10px] font-bold text-brand-300 block">Foto 3 (Parkiran Luas)</span>
                             <input type="file" id="file-kamar-3" accept="image/*" onchange="previewLocalImage(this, 'img-kamar-3')" class="hidden">
                             <button type="button" onclick="document.getElementById('file-kamar-3').click()" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] py-1.5 px-2 rounded font-semibold text-center block transition-colors">Pilih File</button>
                             <input id="url-kamar-3" type="text" class="w-full bg-slate-900 border border-slate-800 p-1.5 rounded text-[10px] text-white focus:outline-none" placeholder="Tautan / Nama file">
@@ -726,7 +726,7 @@
                         </div>
                         <!-- Foto 5 -->
                         <div class="bg-slate-950 p-3 rounded-xl border border-slate-850 space-y-2">
-                            <span class="text-[10px] font-bold text-brand-300 block">Foto 5 (Parkir)</span>
+                            <span class="text-[10px] font-bold text-brand-300 block">Foto 5 (Kamar Mandi)</span>
                             <input type="file" id="file-kamar-5" accept="image/*" onchange="previewLocalImage(this, 'img-kamar-5')" class="hidden">
                             <button type="button" onclick="document.getElementById('file-kamar-5').click()" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] py-1.5 px-2 rounded font-semibold text-center block transition-colors">Pilih File</button>
                             <input id="url-kamar-5" type="text" class="w-full bg-slate-900 border border-slate-800 p-1.5 rounded text-[10px] text-white focus:outline-none" placeholder="Tautan / Nama file">
@@ -758,7 +758,7 @@
                     <div class="md:col-span-8 space-y-4">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-[10px] uppercase font-bold text-slate-400 mb-1">Nama Gedung Cabang</label>
+                                <label class="block text-[10px] uppercase font-bold text-slate-400 mb-1">Nama Kost Cabang</label>
                                 <input id="edit-cab-nama" type="text" class="w-full bg-slate-900 border border-slate-800 p-2.5 rounded-lg text-xs focus:outline-none focus:border-brand-500 text-white">
                             </div>
                             <div>
