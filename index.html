@@ -1,1638 +1,728 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hananny Jaringan Kost Pria - 7 Cabang Strategis & Nyaman di Surabaya</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            50: '#f0f7ff',
-                            100: '#e0effe',
-                            200: '#b9ddfd',
-                            300: '#7cc2fc',
-                            400: '#36a2fa',
-                            500: '#0c85e9',
-                            600: '#0267c7',
-                            700: '#0352a1',
-                            800: '#074685',
-                            900: '#0c3b6e',
-                            950: '#08254b',
-                        },
-                    }
-                }
-            }
-        }
-    </script>
+    <title>Hananny Kost Group - Hunian Strategis & Nyaman Surabaya</title>
     <style>
+        /* BASE STYLE & PALETTE */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+            padding-bottom: 60px;
         }
-        .glass-nav {
-            background-color: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+        a { text-decoration: none; color: inherit; }
+
+        /* HEADER & HERO */
+        header {
+            background: linear-gradient(135deg, #1e3a8a, #0d9488);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-        .custom-shadow {
-            box-shadow: 0 10px 30px -10px rgba(12, 133, 233, 0.15);
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* SECTION TITLE */
+        .section-title {
+            font-size: 1.6rem;
+            color: #1e3a8a;
+            margin-bottom: 20px;
+            border-left: 5px solid #0d9488;
+            padding-left: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0d9488;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.95rem;
+        }
+        .btn:hover { background-color: #0f766e; transform: translateY(-1px); }
+        .btn-admin { background-color: #1e293b; }
+        .btn-admin:hover { background-color: #0f172a; }
+        .btn-sm { padding: 6px 12px; font-size: 0.85rem; border-radius: 4px; }
+        .btn-secondary { background-color: #64748b; }
+        .btn-secondary:hover { background-color: #475569; }
+
+        /* KATALOG GRID */
+        .grid-cabang {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1max));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        @media(max-width: 768px) {
+            .grid-cabang { grid-template-columns: 1fr; }
+        }
+
+        /* KARTU CABANG */
+        .card-cabang {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s;
+        }
+        .card-cabang:hover { transform: translateY(-4px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+        
+        .card-header {
+            padding: 20px;
+            background: #f8fafc;
+            border-bottom: 1px solid #edf2f7;
+            position: relative;
+        }
+        .card-title { font-size: 1.25rem; color: #1e3a8a; font-weight: 700; margin-bottom: 4px; }
+        .card-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .badge-tersedia { background-color: #dcfce7; color: #15803d; }
+        .badge-penuh { background-color: #fee2e2; color: #b91c1c; }
+
+        .card-body { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; gap: 12px; }
+        .info-row { font-size: 0.95rem; color: #475569; }
+        .info-label { font-weight: 600; color: #1e293b; display: block; margin-bottom: 2px; }
+        .info-value { color: #555; }
+        
+        .badge-info-cabang {
+            background-color: #eff6ff;
+            color: #1d4ed8;
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px dashed #bfdbfe;
+        }
+
+        .card-footer { padding: 15px 20px; background: #f8fafc; border-top: 1px solid #edf2f7; display: flex; gap: 10px; }
+
+        /* INTERACTIVE MAPS & CALC SECTION */
+        .flex-section {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        .flex-box { flex: 1; min-width: 300px; background: white; padding: 25px; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+        
+        /* CALCULATOR & FORM INPUTS */
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 6px; color: #1e293b; font-size: 0.95rem; }
+        .form-control { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.95rem; outline: none; transition: border 0.2s; }
+        .form-control:focus { border-color: #0d9488; box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15); }
+        
+        .calc-result {
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            color: #166534;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        /* MAP VIEW */
+        .map-container { width: 100%; height: 300px; background: #e2e8f0; border-radius: 8px; overflow: hidden; position: relative; }
+        .map-container iframe { width: 100%; height: 100%; border: none; }
+        .map-placeholder { display: flex; align-items: center; justify-content: center; height: 100%; color: #64748b; font-weight: 500; text-align: center; padding: 20px; }
+
+        /* GALERI FOTO MOCK */
+        .galeri-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        .galeri-item {
+            background: #cbd5e1;
+            height: 160px;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .galeri-overlay {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            background: rgba(0,0,0,0.6);
+            padding: 6px;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+
+        /* OWNER PANEL (SLIDE UP) */
+        #ownerPanel {
+            position: fixed;
+            bottom: -100%;
+            left: 0;
+            right: 0;
+            background: #1e293b;
+            color: white;
+            max-height: 85vh;
+            overflow-y: auto;
+            box-shadow: 0 -10px 25px rgba(0,0,0,0.3);
+            transition: bottom 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 1000;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        #ownerPanel.active { bottom: 0; }
+        .panel-header {
+            padding: 20px;
+            background: #0f172a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        .panel-title { font-size: 1.3rem; font-weight: 700; color: #38bdf8; }
+        .panel-body { padding: 25px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        @media(max-width: 768px) {
+            .panel-body { grid-template-columns: 1fr; }
+        }
+        .panel-footer {
+            padding: 15px 25px;
+            background: #0f172a;
+            text-align: right;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            position: sticky;
+            bottom: 0;
+        }
+        .panel-label { color: #94a3b8 !important; }
+        .panel-input { background: #334155; color: white; border: 1px solid #475569; }
+        .panel-input:focus { border-color: #38bdf8; box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2); }
+
+        /* FOOTER */
+        footer {
+            background: #1e293b;
+            color: #94a3b8;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            border-top: 1px solid #334155;
+            margin-top: 40px;
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden">
+<body>
 
-    <!-- TOP ANNOUNCEMENT -->
-    <div class="bg-brand-950 text-white py-2 px-4 text-center text-xs md:text-sm font-medium tracking-wide">
-        ⚡ PROMO AKADEMIK: Tersedia 7 Cabang Terdekat Kampus UPN, ITS, UNAIR & Kawasan SIER Surabaya!
-    </div>
-
-    <!-- NAVBAR -->
-    <nav class="sticky top-0 z-40 glass-nav border-b border-slate-100 transition-all duration-300 custom-shadow">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 md:h-20 items-center">
-                <!-- Logo -->
-                <div class="flex items-center space-x-3">
-                    <div class="bg-brand-600 text-white p-2.5 rounded-xl shadow-md flex items-center justify-center">
-                        <i class="fa-solid fa-hotel text-lg md:text-xl"></i>
-                    </div>
-                    <div>
-                        <span class="text-lg md:text-xl font-extrabold text-brand-950 tracking-tight block">HANANNY KOST</span>
-                        <span class="text-[10px] md:text-xs font-semibold uppercase tracking-widest text-brand-600 block">Jaringan Kost Pria</span>
-                    </div>
-                </div>
-
-                <!-- Desktop Navigation -->
-                <div class="hidden lg:flex items-center space-x-6">
-                    <a href="#cabang" class="text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors">7 Cabang Kami</a>
-                    <a href="#galeri" class="text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors">Galeri Foto</a>
-                    <a href="#fasilitas" class="text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors">Fasilitas</a>
-                    <a href="#harga" class="text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors">Biaya Sewa</a>
-                    <a href="#lokasi" class="text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors">Peta & Rute</a>
-                    <a href="#faq" class="text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors">FAQ</a>
-                </div>
-
-                <!-- CTA Button (Desktop) -->
-                <div class="hidden md:block">
-                    <a href="#survey-form" class="bg-brand-600 hover:bg-brand-700 text-white font-bold px-5 py-2.5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 text-sm flex items-center space-x-2">
-                        <i class="fa-solid fa-calendar-check"></i>
-                        <span>Booking / Survey</span>
-                    </a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="lg:hidden p-2 text-slate-600 hover:text-brand-600 focus:outline-none">
-                    <i class="fa-solid fa-bars text-2xl"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 py-4 px-4 space-y-3 transition-all duration-300">
-            <a href="#cabang" class="block text-base font-semibold text-slate-700 hover:text-brand-600 py-2">7 Cabang Kami</a>
-            <a href="#galeri" class="block text-base font-semibold text-slate-700 hover:text-brand-600 py-2">Galeri Foto</a>
-            <a href="#fasilitas" class="block text-base font-semibold text-slate-700 hover:text-brand-600 py-2">Fasilitas</a>
-            <a href="#harga" class="block text-base font-semibold text-slate-700 hover:text-brand-600 py-2">Biaya Sewa</a>
-            <a href="#lokasi" class="block text-base font-semibold text-slate-700 hover:text-brand-600 py-2">Peta & Rute</a>
-            <a href="#faq" class="block text-base font-semibold text-slate-700 hover:text-brand-600 py-2">FAQ</a>
-            <a href="#survey-form" class="w-full text-center block bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 rounded-xl shadow-md transition-colors">
-                <i class="fa-solid fa-calendar-check mr-2"></i> Booking / Survey
-            </a>
-        </div>
-    </nav>
-
-    <!-- HERO SECTION -->
-    <header class="relative bg-gradient-to-br from-brand-950 via-slate-900 to-slate-950 py-16 md:py-24 text-white overflow-hidden">
-        <!-- Abstract Background Ornaments -->
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-brand-400 filter blur-3xl"></div>
-            <div class="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-teal-400 filter blur-3xl"></div>
-        </div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                
-                <!-- Left text content -->
-                <div class="lg:col-span-7 space-y-6 md:space-y-8 text-center lg:text-left">
-                    <div class="inline-flex items-center space-x-2 bg-brand-500/10 border border-brand-500/20 px-3 py-1.5 rounded-full text-brand-400 text-xs md:text-sm font-semibold tracking-wider uppercase mx-auto lg:mx-0">
-                        <i class="fa-solid fa-network-wired"></i>
-                        <span>HANANNY KOST GROUP — INDONESIA</span>
-                    </div>
-
-                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white">
-                        7 Pilihan Cabang <br class="hidden sm:inline">
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-teal-300">Kost Pria Terbaik Surabaya</span>
-                    </h1>
-
-                    <p class="text-base sm:text-lg md:text-xl text-slate-300 max-w-2xl mx-auto lg:mx-0 font-medium leading-relaxed">
-                        Kami mengelola 7 gedung kost pria strategis di area Rungkut, Medokan Ayu, Gunung Anyar, hingga Keputih. Menawarkan kepastian kenyamanan, keamanan terpadu 24 jam, dan harga langsung pemilik.
-                    </p>
-
-                    <!-- Trust Stats -->
-                    <div class="grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0 pt-4 border-t border-slate-800/80 text-center lg:text-left">
-                        <div>
-                            <div class="text-2xl md:text-3xl font-extrabold text-brand-400">7 Cabang</div>
-                            <div class="text-xs text-slate-400 font-medium">Surabaya Timur & Selatan</div>
-                        </div>
-                        <div>
-                            <div class="text-2xl md:text-3xl font-extrabold text-brand-400">3 Pilihan</div>
-                            <div class="text-xs text-slate-400 font-medium">Tipe Kamar Sesuai Budget</div>
-                        </div>
-                        <div>
-                            <div class="text-2xl md:text-3xl font-extrabold text-brand-400">1 Management</div>
-                            <div class="text-xs text-slate-400 font-medium">Layanan Cepat & Aman</div>
-                        </div>
-                    </div>
-
-                    <!-- CTA Buttons -->
-                    <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 justify-center lg:justify-start pt-2">
-                        <a href="#cabang" class="bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 text-white font-extrabold px-8 py-4 rounded-xl shadow-lg shadow-brand-500/20 hover:shadow-xl hover:shadow-brand-500/30 transition-all duration-300 transform hover:-translate-y-1 text-base flex items-center justify-center space-x-3">
-                            <i class="fa-solid fa-list-check"></i>
-                            <span>Pilih Cabang Terdekat</span>
-                        </a>
-                        <a href="#survey-form" class="bg-white/10 hover:bg-white/15 border border-white/20 text-white font-bold px-8 py-4 rounded-xl transition-all duration-300 text-base flex items-center justify-center space-x-2">
-                            <span>Hubungi Pemilik</span>
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Right Visual Element -->
-                <div class="lg:col-span-5 relative">
-                    <div class="relative mx-auto max-w-md lg:max-w-none">
-                        <!-- Background glow effect -->
-                        <div class="absolute inset-0 bg-brand-500/20 rounded-3xl filter blur-xl transform rotate-3"></div>
-                        
-                        <!-- Main Card Presentation -->
-                        <div class="relative bg-slate-900 border border-slate-800 rounded-3xl p-6 md:p-8 shadow-2xl space-y-6">
-                            <div class="flex justify-between items-center">
-                                <span class="bg-green-500/10 border border-green-500/30 text-green-400 text-xs font-bold px-3 py-1 rounded-full flex items-center space-x-1.5">
-                                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                                    <span>Tersedia Kamar Kosong</span>
-                                </span>
-                                <span class="text-slate-400 text-xs font-medium"><i class="fa-solid fa-city text-brand-400 mr-1"></i> Hananny Kost Group</span>
-                            </div>
-
-                            <!-- List of branches sneak peek (Dinamis) -->
-                            <div id="hero-branches-list" class="space-y-3.5">
-                                <!-- Terisi dinamis lewat JS -->
-                            </div>
-
-                            <div class="bg-slate-950 border border-slate-800/80 rounded-2xl p-4 flex justify-between items-center">
-                                <div>
-                                    <p class="text-[10px] text-slate-400 uppercase tracking-widest font-bold">Harga Sewa Jaringan</p>
-                                    <p class="text-base md:text-lg font-black text-white">Rp 600.000 - 1.2M <span class="text-[10px] text-slate-400 font-normal">/ Bln</span></p>
-                                </div>
-                                <a href="#cabang" class="bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition-all duration-300">
-                                    Lihat 7 Cabang <i class="fa-solid fa-chevron-right ml-1"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+    <!-- UTAMA HEADER -->
+    <header>
+        <h1>Hananny Kost Group</h1>
+        <p>Sistem Informasi Jaringan Hunian Kos Pria Strategis & Terpercaya di Surabaya</p>
     </header>
 
-    <!-- 7 CABANG KATALOG SECTION (Dinamis Sekarang) -->
-    <section id="cabang" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-16 relative">
-            <span class="text-xs font-bold text-brand-600 bg-brand-50 px-3 py-1 rounded-full uppercase tracking-wider">Jaringan Cabang Resmi</span>
-            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mt-3">Jelajahi 7 Lokasi Hananny Kost</h2>
-            <div class="h-1.5 w-20 bg-brand-600 mx-auto rounded-full mt-4 mb-4"></div>
-            <p class="text-slate-600 font-medium">Semua cabang dikelola langsung dengan standar fasilitas kenyamanan, kebersihan, dan kecepatan internet yang sama.</p>
+    <div class="container">
+        
+        <!-- KATALOG SECTION -->
+        <div class="section-title">
+            <h2>Katalog Jaringan 6 Cabang</h2>
+            <button class="btn btn-admin" onclick="openOwnerPanel()">⚙️ Edit Data 6 Cabang Ini (Owner Panel Direct)</button>
+        </div>
+        
+        <div class="grid-cabang" id="containerKatalog">
+            <!-- Data Cabang Di-render Secara Dinamis Lewat JavaScript -->
+        </div>
+
+        <!-- TWO COLUMN INTERACTIVE SECTION -->
+        <div class="flex-section">
             
-            <!-- Quick Edit Button Only Visible on Front for Convenience -->
-            <button onclick="requestOwnerAuth()" class="mt-4 inline-flex items-center space-x-2 text-xs bg-slate-900 hover:bg-brand-600 text-white font-extrabold px-4 py-2 rounded-xl shadow transition-all duration-300">
-                <i class="fa-solid fa-pen-to-square"></i>
-                <span>Edit Data 7 Cabang Ini (Owner Only)</span>
-            </button>
+            <!-- PETA INTERAKTIF SWITCHER -->
+            <div class="flex-box">
+                <div class="section-title"><h3>📍 Peta Lokasi & Navigasi</h3></div>
+                <div style="margin-bottom: 12px; font-weight: 600; color: #475569;" id="activeMapTitle">
+                    Pilih salah satu cabang di atas untuk memuat peta rute spesifik.
+                </div>
+                <div class="map-container" id="mapWrapper">
+                    <div class="map-placeholder">
+                        Silakan klik tombol "Lihat Peta" pada kartu katalog salah satu cabang kos untuk menampilkan visualisasi Google Maps interaktif di sini.
+                    </div>
+                </div>
+            </div>
+
+            <!-- KALKULATOR SAKU MAHASISWA -->
+            <div class="flex-box">
+                <div class="section-title"><h3>🧮 Kalkulator Saku Penghuni</h3></div>
+                <div class="form-group">
+                    <label>Pilih Cabang Rencana Hunian:</label>
+                    <select id="calcCabang" class="form-control" onchange="hitungSimulasi()">
+                        <!-- Diisi otomatis via JS -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Estimasi Biaya Makan Konsumsi (Per Hari):</label>
+                    <input type="number" id="calcMakan" class="form-control" value="35000" oninput= "hitungSimulasi()">
+                </div>
+                <div class="info-row" style="margin-top: 10px; font-size: 0.9rem; color: #64748b;">
+                    * Simulasi menghitung akumulasi otomatis: Biaya Sewa Kos Bulanan + (Biaya Makan x 30 Hari).
+                </div>
+                <div class="calc-result" id="calcTotal">
+                    Total Estimasi: Rp 0 / Bulan
+                </div>
+            </div>
+
         </div>
 
-        <!-- 7 Branches Interactive Grid (Dinamis lewat Javascript) -->
-        <div id="cabang-grid-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            <!-- Diisi secara dinamis oleh renderCabangGrid() -->
-        </div>
-    </section>
-
-    <!-- PHOTO GALLERY SECTION -->
-    <section id="galeri" class="py-16 md:py-24 bg-slate-100 border-y border-slate-200/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">Kondisi Fisik Kamar & Fasilitas</h2>
-                <div class="h-1.5 w-20 bg-brand-600 mx-auto rounded-full mt-4 mb-4"></div>
-                <p class="text-slate-600 font-medium">Standar tinggi pengelolaan Hananny Kost. Semua kamar dipelihara berkala oleh tim kami untuk menjamin kebersihan saat Anda masuk.</p>
+        <!-- GALERI SELEKSI FOTO -->
+        <div class="section-title"><h3>📸 Galeri Hunian (Standar Kamar & Fasilitas)</h3></div>
+        <div class="galeri-grid">
+            <div class="galeri-item" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=500&q=80');">
+                <div class="galeri-overlay">Kamar Deluxe Clean</div>
             </div>
-
-            <!-- Custom Image Grid (Using realistic styled room graphics & placeholders) -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Room Card 1 -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
-                    <div class="relative h-64 overflow-hidden bg-slate-200">
-                        <img id="img-kamar-1" src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&q=80&w=600" alt="Kamar Kos Tipe Standard" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/600x400?text=Kamar+Kos+Hananny'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                            <span class="text-white text-xs font-semibold"><i class="fa-regular fa-eye mr-1"></i> Kamar Deluxe AC</span>
-                        </div>
-                        <span class="absolute top-4 left-4 bg-brand-600 text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-md">Tipe Deluxe AC</span>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="font-extrabold text-slate-900 text-lg">Kamar Deluxe AC & K. Mandi Dalam</h3>
-                        <p class="text-slate-500 text-xs mt-1">Sangat adem, dilengkapi kasur spring bed, AC, meja kerja nyaman, dan kamar mandi dalam bersih.</p>
-                    </div>
-                </div>
-
-                <!-- Room Card 2 -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
-                    <div class="relative h-64 overflow-hidden bg-slate-200">
-                        <img id="img-kamar-2" src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&q=80&w=600" alt="Kamar Kos Tipe Standard" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/600x400?text=Kamar+Standard'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                            <span class="text-white text-xs font-semibold"><i class="fa-regular fa-eye mr-1"></i> Kamar Premium</span>
-                        </div>
-                        <span class="absolute top-4 left-4 bg-teal-600 text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-md">Tipe Premium</span>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="font-extrabold text-slate-900 text-lg">Kamar Premium Non-AC (Exhaust)</h3>
-                        <p class="text-slate-500 text-xs mt-1">Sirkulasi udara maksimal dengan exhaust fan berkualitas, meja belajar minimalis, dan lemari.</p>
-                    </div>
-                </div>
-
-                <!-- Room Card 3 -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
-                    <div class="relative h-64 overflow-hidden bg-slate-200">
-                        <img id="img-kamar-3" src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=600" alt="Kamar Mandi" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/600x400?text=Kamar+Mandi'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                            <span class="text-white text-xs font-semibold"><i class="fa-regular fa-eye mr-1"></i> Area Kamar Mandi</span>
-                        </div>
-                        <span class="absolute top-4 left-4 bg-slate-900 text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-md">Kamar Mandi</span>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="font-extrabold text-slate-900 text-lg">Toilet & Shower Higienis</h3>
-                        <p class="text-slate-500 text-xs mt-1">Menggunakan kloset jongkok/duduk berkualitas tinggi, lantai keramik anti-slip, air mengalir lancar.</p>
-                    </div>
-                </div>
-
-                <!-- Room Card 4 -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
-                    <div class="relative h-64 overflow-hidden bg-slate-200">
-                        <img id="img-kamar-4" src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&q=80&w=600" alt="Dapur Bersama" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/600x400?text=Dapur+Bersama'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                            <span class="text-white text-xs font-semibold"><i class="fa-regular fa-eye mr-1"></i> Area Dapur</span>
-                        </div>
-                        <span class="absolute top-4 left-4 bg-slate-900 text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-md">Fasilitas Bersama</span>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="font-extrabold text-slate-900 text-lg">Area Dapur Bersama & Kompor</h3>
-                        <p class="text-slate-500 text-xs mt-1">Lengkap dengan kompor gas, wastafel cuci piring, kulkas bersama, dan tempat menyimpan peralatan makan.</p>
-                    </div>
-                </div>
-
-                <!-- Room Card 5 -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
-                    <div class="relative h-64 overflow-hidden bg-slate-200">
-                        <img id="img-kamar-5" src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&q=80&w=600" alt="Parkir Motor" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/600x400?text=Parkiran+Motor'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                            <span class="text-white text-xs font-semibold"><i class="fa-regular fa-eye mr-1"></i> Area Parkir</span>
-                        </div>
-                        <span class="absolute top-4 left-4 bg-slate-900 text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-md">Keamanan</span>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="font-extrabold text-slate-900 text-lg">Parkiran Motor Terlindung & Aman</h3>
-                        <p class="text-slate-500 text-xs mt-1">Area parkir terlindung dari hujan dan panas. Pintu gerbang utama terkunci aman 24 jam.</p>
-                    </div>
-                </div>
-
-                <!-- Special Promo Card -->
-                <div class="bg-gradient-to-br from-brand-600 via-brand-700 to-brand-800 rounded-2xl p-6 text-white flex flex-col justify-between shadow-lg relative overflow-hidden">
-                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-white/10 rounded-full filter blur-xl"></div>
-                    <div>
-                        <span class="text-[10px] uppercase font-bold tracking-widest text-brand-200">Garansi Kepercayaan</span>
-                        <h3 class="font-bold text-xl text-white mt-2 leading-snug">Sesuai Foto Atau Uang Anda Kembali</h3>
-                        <p class="text-xs text-brand-100 mt-2 leading-relaxed">Kami menjamin 100% kondisi fisik kamar di lokasi asli sama persis dengan dokumentasi foto di website ini.</p>
-                    </div>
-                    <div class="bg-brand-900/40 p-4 rounded-xl border border-brand-500/30 mt-6">
-                        <div class="flex justify-between items-center text-xs">
-                            <span class="text-brand-200">Sewa Bulanan Terjangkau</span>
-                            <span class="font-black text-white text-sm">Mulai Rp 600.000</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="galeri-item" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=500&q=80');">
+                <div class="galeri-overlay">Kamar Mandi Dalam Kamar</div>
             </div>
-        </div>
-    </section>
-
-    <!-- FACILITIES SECTION -->
-    <section id="fasilitas" class="py-16 md:py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-xs font-bold text-brand-600 bg-brand-50 px-3 py-1 rounded-full uppercase tracking-wider">Fasilitas Jaringan</span>
-                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mt-3">Standar Fasilitas Terlengkap</h2>
-                <div class="h-1.5 w-20 bg-brand-600 mx-auto rounded-full mt-4 mb-4"></div>
-                <p class="text-slate-600 font-medium">Setiap gedung cabang kami dilengkapi fasilitas terstandar demi kepuasan tinggal yang maksimal.</p>
+            <div class="galeri-item" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=500&q=80');">
+                <div class="galeri-overlay">Area Dapur Bersama</div>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Fasilitas Kamar -->
-                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:border-brand-100 transition-colors">
-                    <div class="bg-brand-100 text-brand-600 w-12 h-12 rounded-xl flex items-center justify-center mb-5 shadow-sm">
-                        <i class="fa-solid fa-bed text-xl"></i>
-                    </div>
-                    <h3 class="font-extrabold text-slate-900 text-lg mb-3">Fasilitas Kamar Pribadi</h3>
-                    <ul class="space-y-2 text-slate-600 text-sm">
-                        <li class="flex items-center space-x-2.5">
-                            <i class="fa-solid fa-circle-check text-green-500 text-xs"></i>
-                            <span>Tempat Tidur Spring Bed / Kasur Nyaman</span>
-                        </li>
-                        <li class="flex items-center space-x-2.5">
-                            <i class="fa-solid fa-circle-check text-green-500 text-xs"></i>
-                            <span>Bantal, Guling, & Seprai Berkualitas</span>
-                        </li>
-                        <li class="flex items-center space-x-2.5">
-                            <i class="fa-solid fa-circle-check text-green-500 text-xs"></i>
-                            <span>Lemari Pakaian Pribadi di Tiap Kamar</span>
-                        </li>
-                        <li class="flex items-center space-x-2.5">
-                            <i class="fa-solid fa-circle-check text-green-500 text-xs"></i>
-                            <span>Meja Kerja / Meja Belajar & Kursi</span>
-                        </li>
-                        <li class="flex items-center space-x-2.5">
-                            <i class="fa-solid fa-circle-check text-green-500 text-xs"></i>
-                            <span>AC / Exhaust Fan Sesuai Tipe Pilihan</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Fasilitas Bersama -->
-                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:border-brand-100 transition-colors">
-                    <div class="bg-teal-100 text-teal-600 w-12 h-12 rounded-xl flex items-center justify-center mb-5 shadow-sm">
-                        <i class="fa-solid fa-users-line text-xl"></i>
-                    </div>
-                    <h3 class="font-extrabold text-slate-900 text-lg mb-3">Fasilitas Bersama (Umum)</h3>
-                    <ul class="space-y-2 text-slate-600 text-sm">
-                        <li class="flex items-center space-x-2.5">
-                            <i class="fa-solid fa-circle-check text-green-500 text-xs"></i>
-                            <span>Dapur dengan Kompor Gas & Wastafel</span>
-                        </li>
-                        <li class="flex items-center space-x-2.5">
-                            <i class="fa-solid fa-circle-check text-green-500 text-xs"></i>
-                            <span>Kulkas Bersama untuk penyimpanan makanan</span>
-                        </li>
-                        <li class="flex items-center space-x-2.5">
-                            <i class="fa-solid fa-circle-check text-green-500 text-xs"></i>
-                            <span>Dispenser & Air Galon Mineral Gratis</span>
-                        </li>
-                        <li class="flex items-center space-x-2.5">
-                            <i class="fa-solid fa-circle-check text-green-500 text-xs"></i>
-                            <span>Area Jemuran Pakaian yang aman & luas</span>
-                        </li>
-                        <li class="flex items-center space-x-2.5">
-                            <i class="fa-solid fa-circle-check text-green-500 text-xs"></i>
-                            <span>Ruang Tamu Utama</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Fasilitas Keamanan -->
-                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:border-brand-100 transition-colors">
-                    <div class="bg-amber-100 text-amber-600 w-12 h-12 rounded-xl flex items-center justify-center mb-5 shadow-sm">
-                        <i class="fa-solid fa-shield-halved text-xl"></i>
-                    </div>
-                    <h3 class="font-extrabold text-slate-900 text-lg mb-3">Keamanan & Layanan</h3>
-                    <ul class="space-y-2 text-slate-600 text-sm">
-                        <li class="flex items-center space-x-2.5">
-                            <i class="fa-solid fa-circle-check text-green-500 text-xs"></i>
-                            <span>Akses Gerbang Utama 24 Jam Mandiri</span>
-                        </li>
-                        <li class="flex items-center space-x-2.5">
-                            <i class="fa-solid fa-circle-check text-green-500 text-xs"></i>
-                            <span>Kunci Kamar & Pintu Gerbang masing-masing</span>
-                        </li>
-                        <li class="flex items-center space-x-2.5">
-                            <i class="fa-solid fa-circle-check text-green-500 text-xs"></i>
-                            <span>WiFi Berkecepatan Tinggi Unlimited</span>
-                        </li>
-                        <li class="flex items-center space-x-2.5">
-                            <i class="fa-solid fa-circle-check text-green-500 text-xs"></i>
-                            <span>Bebas Biaya Air Bersih & Kebersihan</span>
-                        </li>
-                        <li class="flex items-center space-x-2.5">
-                            <i class="fa-solid fa-circle-check text-green-500 text-xs"></i>
-                            <span>Penjaga Kost / Pengelola Fast Response</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ROOM PRICE & COST SECTION -->
-    <section id="harga" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">Biaya Sewa Bersahabat</h2>
-            <div class="h-1.5 w-20 bg-brand-600 mx-auto rounded-full mt-4 mb-4"></div>
-            <p class="text-slate-600 font-medium">Bebas pilih tipe kamar yang paling sesuai dengan anggaran bulanan Anda. Tidak ada biaya siluman tambahan!</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-            <!-- Tipe Standard -->
-            <div class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 flex flex-col justify-between shadow-sm relative group hover:border-slate-300 transition-all">
-                <div>
-                    <h3 class="text-xl font-extrabold text-slate-900">Tipe Standard (Kipas)</h3>
-                    <p class="text-slate-500 text-xs mt-1">Sangat hemat untuk mahasiswa & karyawan aktif.</p>
-                    <div class="my-6">
-                        <span class="text-3xl md:text-4xl font-black text-slate-900">Rp 600.000</span>
-                        <span class="text-slate-500 text-sm">/ bulan</span>
-                    </div>
-                    <ul class="space-y-3.5 border-t border-slate-100 pt-6 text-sm text-slate-600">
-                        <li class="flex items-center space-x-2.5">
-                            <i class="fa-solid fa-check text-brand-600"></i>
-                            <span>Kasur Single & Bantal</span>
-                        </li>
-                        <li class="flex items-center space-x-2.5">
-                            <i class="fa-solid fa-check text-brand-600"></i>
-                            <span>Exhaust Fan / Kipas Angin</span>
-                        </li>
-                        <li class="flex items-center space-x-2.5">
-                            <i class="fa-solid fa-check text-brand-600"></i>
-                            <span>Lemari & Meja Belajar</span>
-                        </li>
-                        <li class="flex items-center space-x-2.5">
-                            <i class="fa-solid fa-check text-brand-600"></i>
-                            <span>Kamar Mandi Luar Bersih</span>
-                        </li>
-                        <li class="flex items-center space-x-2.5">
-                            <i class="fa-solid fa-check text-brand-600"></i>
-                            <span>Kapasitas 1 Orang</span>
-                        </li>
-                    </ul>
-                </div>
-                <a href="#survey-form" onclick="selectRoomType('Tipe Standard (Rp 600.000)')" class="mt-8 block w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 px-4 rounded-xl text-center text-sm transition-colors">
-                    Pilih Kamar Ini
-                </a>
-            </div>
-
-            <!-- Tipe Premium (Best Seller) -->
-            <div class="bg-white border-2 border-brand-500 rounded-2xl p-6 md:p-8 flex flex-col justify-between shadow-xl relative group transform md:-translate-y-2">
-                <span class="absolute top-0 right-1/2 transform translate-x-1/2 -translate-y-1/2 bg-brand-500 text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-md">Terpopuler</span>
-                <div>
-                    <h3 class="text-xl font-extrabold text-slate-900">Tipe Premium (Standard Plus)</h3>
-                    <p class="text-slate-500 text-xs mt-1">Sempurna untuk kenyamanan lebih luas & sirkulasi optimal.</p>
-                    <div class="my-6">
-                        <span class="text-3xl md:text-4xl font-black text-brand-600">Rp 850.000</span>
-                        <span class="text-slate-500 text-sm">/ bulan</span>
-                    </div>
-                    <ul class="space-y-3.5 border-t border-slate-100 pt-6 text-sm text-slate-600">
-                        <li class="flex items-center space-x-2.5">
-                            <i class="fa-solid fa-check text-brand-600"></i>
-                            <span>Kasur Single Premium & Seprai</span>
-                        </li>
-                        <li class="flex items-center space-x-2.5">
-                            <i class="fa-solid fa-check text-brand-600"></i>
-                            <span>Exhaust Fan High Capacity / AC Low Watt</span>
-                        </li>
-                        <li class="flex items-center space-x-2.5">
-                            <i class="fa-solid fa-check text-brand-600"></i>
-                            <span>Lemari Pakaian Lebih Besar</span>
-                        </li>
-                        <li class="flex items-center space-x-2.5">
-                            <i class="fa-solid fa-check text-brand-600"></i>
-                            <span>Meja Kerja Minimalis Nyaman</span>
-                        </li>
-                        <li class="flex items-center space-x-2.5">
-                            <i class="fa-solid fa-check text-brand-600"></i>
-                            <span>Opsi Kamar Mandi Luar Dekat Kamar</span>
-                        </li>
-                    </ul>
-                </div>
-                <a href="#survey-form" onclick="selectRoomType('Tipe Premium (Rp 850.000)')" class="mt-8 block w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 px-4 rounded-xl text-center text-sm transition-colors shadow-md hover:shadow-lg">
-                    Pilih Kamar Ini
-                </a>
-            </div>
-
-            <!-- Tipe Deluxe AC -->
-            <div class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 flex flex-col justify-between shadow-sm relative group hover:border-slate-300 transition-all">
-                <div>
-                    <h3 class="text-xl font-extrabold text-slate-900">Tipe Deluxe AC</h3>
-                    <p class="text-slate-500 text-xs mt-1">Kenyamanan maksimal untuk istirahat dingin total.</p>
-                    <div class="my-6">
-                        <span class="text-3xl md:text-4xl font-black text-slate-900">Rp 950.000 - Rp 1.200.000</span>
-                        <span class="text-slate-500 text-sm">/ bulan</span>
-                    </div>
-                    <ul class="space-y-3.5 border-t border-slate-100 pt-6 text-sm text-slate-600">
-                        <li class="flex items-center space-x-2.5">
-                            <i class="fa-solid fa-check text-brand-600"></i>
-                            <span>Kamar Ber-AC Dingin Sepenuhnya</span>
-                        </li>
-                        <li class="flex items-center space-x-2.5">
-                            <i class="fa-solid fa-check text-brand-600"></i>
-                            <span>Spring Bed Nyaman & Set Bantal Seprai</span>
-                        </li>
-                        <li class="flex items-center space-x-2.5">
-                            <i class="fa-solid fa-check text-brand-600"></i>
-                            <span>Kamar Mandi Dalam (Private Bathroom)</span>
-                        </li>
-                        <li class="flex items-center space-x-2.5">
-                            <i class="fa-solid fa-check text-brand-600"></i>
-                            <span>Lemari Besar & Meja Kerja Eksklusif</span>
-                        </li>
-                        <li class="flex items-center space-x-2.5">
-                            <i class="fa-solid fa-check text-brand-600"></i>
-                            <span>Termasuk Biaya Air Bersih</span>
-                        </li>
-                    </ul>
-                </div>
-                <a href="#survey-form" onclick="selectRoomType('Tipe Deluxe AC (Rp 950.000)')" class="mt-8 block w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 px-4 rounded-xl text-center text-sm transition-colors">
-                    Pilih Kamar Ini
-                </a>
+            <div class="galeri-item" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=500&q=80');">
+                <div class="galeri-overlay">Parkir Kendaraan Aman</div>
             </div>
         </div>
 
-        <!-- Mini Info Note -->
-        <p class="text-center text-slate-500 text-xs mt-8 font-medium">
-            *Biaya listrik belum termasuk (opsi token mandiri per kamar / sharing murah sesuai kesepakatan cabang). Deposit ringan di awal dan akan dikembalikan saat selesai masa sewa.
-        </p>
-    </section>
-
-    <!-- INTERACTIVE BUDGET CALCULATOR FOR STUDENTS -->
-    <section class="py-12 bg-brand-950 text-white relative overflow-hidden">
-        <div class="absolute inset-0 opacity-5">
-            <div class="absolute top-0 right-0 w-80 h-80 rounded-full bg-white filter blur-2xl"></div>
-        </div>
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
-            <div class="text-center mb-8">
-                <span class="bg-brand-500/20 text-brand-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Fitur Kalkulator</span>
-                <h3 class="text-2xl md:text-3xl font-extrabold text-white mt-2">Kalkulator Simulasi Budget Bulanan</h3>
-                <p class="text-slate-300 text-sm mt-1">Cari tahu kecocokan saku bulananmu dengan pilihan kamar kos kami!</p>
-            </div>
-
-            <div class="bg-slate-900/80 border border-slate-800 rounded-3xl p-6 md:p-8 shadow-xl space-y-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Pilih Kamar Kos</label>
-                        <select id="calc-kamar" onchange="calculateBudget()" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-white text-sm focus:outline-none focus:border-brand-500">
-                            <option value="600000">Tipe Standard - Rp 600.000 / bln</option>
-                            <option value="850000">Tipe Premium - Rp 850.000 / bln</option>
-                            <option value="950000" selected>Tipe Deluxe AC - Rp 950.000 / bln</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Rencana Anggaran Makan & Hidup / Hari</label>
-                        <input id="calc-makan" type="number" value="30000" oninput="calculateBudget()" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-white text-sm focus:outline-none focus:border-brand-500" placeholder="Contoh: 30000">
-                    </div>
+        <!-- FORMULIR BOOKING / SURVEY -->
+        <div class="flex-box" style="max-width: 700px; margin: 0 auto 30px auto;">
+            <div class="section-title"><h3>📅 Formulir Pengajuan Survey & Booking</h3></div>
+            <form onsubmit="kirimFormWhatsApp(event)">
+                <div class="form-group">
+                    <label>Nama Lengkap Calon Penghuni:</label>
+                    <input type="text" id="formNama" class="form-control" placeholder="Masukkan nama Anda..." required>
                 </div>
-
-                <div class="border-t border-slate-800/80 pt-6 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                    <div class="p-4 bg-slate-950/60 rounded-2xl border border-slate-800/50">
-                        <span class="text-xs text-slate-400 font-bold uppercase tracking-wider">Sewa Kos / Bulan</span>
-                        <p id="calc-res-kos" class="text-lg md:text-xl font-extrabold text-brand-400 mt-1">Rp 950.000</p>
-                    </div>
-                    <div class="p-4 bg-slate-950/60 rounded-2xl border border-slate-800/50">
-                        <span class="text-xs text-slate-400 font-bold uppercase tracking-wider">Estimasi Makan & Saku / Bulan</span>
-                        <p id="calc-res-makan" class="text-lg md:text-xl font-extrabold text-teal-400 mt-1">Rp 900.000</p>
-                    </div>
-                    <div class="p-4 bg-slate-950/60 rounded-2xl border border-slate-800/50">
-                        <span class="text-xs text-slate-400 font-bold uppercase tracking-wider">Total Kebutuhan Bulanan</span>
-                        <p id="calc-res-total" class="text-xl md:text-2xl font-black text-white mt-1">Rp 1.850.000</p>
-                    </div>
+                <div class="form-group">
+                    <label>Nomor WhatsApp Kontak:</label>
+                    <input type="text" id="formKontak" class="form-control" placeholder="Contoh: 081234567xxx" required>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SURVEY FORM SECTION -->
-    <section id="survey-form" class="py-16 md:py-24 max-w-4xl mx-auto px-4 sm:px-6">
-        <div class="bg-white rounded-3xl border border-slate-200/80 shadow-2xl p-6 md:p-10 relative overflow-hidden">
-            <!-- Background Accent -->
-            <div class="absolute top-0 right-0 bg-brand-500/5 w-40 h-40 rounded-full -mr-16 -mt-16"></div>
-            
-            <div class="relative z-10 text-center md:text-left md:flex justify-between items-center mb-8 pb-6 border-b border-slate-100">
-                <div class="mb-4 md:mb-0">
-                    <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">Ajukan Request Survey / Booking</h2>
-                    <p class="text-slate-500 text-xs md:text-sm mt-1">Pilih cabang yang paling strategis untuk Anda, dan jadwalkan survey Anda langsung ke WhatsApp Admin.</p>
+                <div class="form-group">
+                    <label>Pilih Cabang Tujuan:</label>
+                    <select id="formCabang" class="form-control" required></select>
                 </div>
-                <div class="bg-brand-50 border border-brand-100 text-brand-600 px-4 py-2.5 rounded-2xl flex items-center space-x-2 text-xs md:text-sm font-extrabold mx-auto md:mx-0 justify-center w-max">
-                    <i class="fa-solid fa-bolt text-amber-500"></i>
-                    <span>Tersambung ke WhatsApp</span>
+                <div class="form-group">
+                    <label>Rencana Tanggal Survey Kelayakan:</label>
+                    <input type="date" id="formTanggal" class="form-control" required>
                 </div>
-            </div>
-
-            <!-- Form -->
-            <form id="surveyForm" onsubmit="sendSurveyToWhatsapp(event)" class="space-y-6 relative z-10">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Nama -->
-                    <div>
-                        <label for="nama" class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Nama Lengkap Anda</label>
-                        <div class="relative">
-                            <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400">
-                                <i class="fa-solid fa-user text-sm"></i>
-                            </span>
-                            <input type="text" id="nama" required class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-brand-500 focus:bg-white transition-all" placeholder="Nama Anda (contoh: William)">
-                        </div>
-                    </div>
-
-                    <!-- Nomor HP -->
-                    <div>
-                        <label for="whatsapp" class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Nomor WhatsApp Aktif</label>
-                        <div class="relative">
-                            <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400">
-                                <i class="fa-brands fa-whatsapp text-base"></i>
-                            </span>
-                            <input type="tel" id="whatsapp" required class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-brand-500 focus:bg-white transition-all" placeholder="Contoh: 08123456789">
-                        </div>
-                    </div>
+                <div class="form-group">
+                    <label>Estimasi Jam Kedatangan:</label>
+                    <input type="time" id="formJam" class="form-control" required>
                 </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Tipe Kamar -->
-                    <div>
-                        <label for="room_type" class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Tipe Kamar yang Diinginkan</label>
-                        <div class="relative">
-                            <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400">
-                                <i class="fa-solid fa-bed text-sm"></i>
-                            </span>
-                            <select id="room_type" required class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-brand-500 focus:bg-white transition-all appearance-none">
-                                <option value="" disabled selected>Pilih Tipe Kamar</option>
-                                <option value="Tipe Standard (Rp 600.000)">Tipe Standard - Rp 600.000</option>
-                                <option value="Tipe Premium (Rp 850.000)">Tipe Premium - Rp 850.000</option>
-                                <option value="Tipe Deluxe AC (Rp 950.000)">Tipe Deluxe AC - Rp 950.000</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <!-- Cabang Kos (7 Pilihan - Terisi secara dinamis) -->
-                    <div>
-                        <label for="branch" class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Pilihan Cabang Kos Hananny</label>
-                        <div class="relative">
-                            <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400">
-                                <i class="fa-solid fa-building text-sm"></i>
-                            </span>
-                            <select id="branch" required class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-brand-500 focus:bg-white transition-all appearance-none">
-                                <option value="" disabled selected>Pilih Cabang Kos</option>
-                                <!-- Akan dimasukkan secara dinamis via JS -->
-                            </select>
-                        </div>
-                    </div>
+                <div class="form-group">
+                    <label>Catatan Tambahan Khusus Pemilik:</label>
+                    <textarea id="formCatatan" class="form-control" rows="3" placeholder="Sebutkan permintaan khusus atau info kendaraan jika ada..."></textarea>
                 </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Rencana Tanggal Survey -->
-                    <div>
-                        <label for="survey_date" class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Tanggal Rencana Survey / Check-in</label>
-                        <div class="relative">
-                            <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400">
-                                <i class="fa-solid fa-calendar-days text-sm"></i>
-                            </span>
-                            <input type="date" id="survey_date" required class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-brand-500 focus:bg-white transition-all">
-                        </div>
-                    </div>
-
-                    <!-- Rencana Jam Survey -->
-                    <div>
-                        <label for="survey_time" class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Waktu Rencana Kedatangan (Jam)</label>
-                        <div class="relative">
-                            <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400">
-                                <i class="fa-solid fa-clock text-sm"></i>
-                            </span>
-                            <input type="time" id="survey_time" required class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-brand-500 focus:bg-white transition-all">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pesan / Catatan Tambahan -->
-                <div>
-                    <label for="notes" class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Pertanyaan / Pesan Tambahan (Opsional)</label>
-                    <textarea id="notes" rows="3" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-brand-500 focus:bg-white transition-all" placeholder="Tuliskan pertanyaan khusus Anda, misalnya 'Saya membawa motor besar' atau 'Apakah deposit bisa dicicil?'"></textarea>
-                </div>
-
-                <!-- Submit Button -->
-                <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-extrabold py-4 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 text-base flex items-center justify-center space-x-3">
-                    <i class="fa-brands fa-whatsapp text-xl"></i>
-                    <span>Kirim Pengajuan Survey ke WhatsApp</span>
-                </button>
+                <button type="submit" class="btn" style="width: 100%; padding: 12px; font-size: 1.05rem;">🚀 Kirim Request Survey via WhatsApp Admin</button>
             </form>
         </div>
-    </section>
 
-    <!-- LOCATION & MAP SECTION WITH ACTIVE SWITCHER -->
-    <section id="lokasi" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white border-y border-slate-200/40">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="text-xs font-bold text-brand-600 bg-brand-50 px-3 py-1 rounded-full uppercase tracking-wider">Pin Lokasi Google Maps</span>
-            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mt-3">Lokasi Presisi & Rute Navigasi</h2>
-            <div class="h-1.5 w-20 bg-brand-600 mx-auto rounded-full mt-4 mb-4"></div>
-            <p class="text-slate-600 font-medium">Klik nama cabang pada katalog di atas untuk langsung memperbarui peta di bawah ini ke lokasi cabang tersebut.</p>
+    </div>
+
+    <!-- OWNER PANEL INTERFACE (PIN SEKARANG DIHAPUS DAN LANGSUNG TERBUKA) -->
+    <div id="ownerPanel">
+        <div class="panel-header">
+            <div class="panel-title">🛠️ Hananny Owner Panel (Direct Access Mode)</div>
+            <button class="btn btn-secondary btn-sm" onclick="closeOwnerPanel()">❌ Tutup Panel</button>
         </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-            <!-- Map Card (Left) -->
-            <div class="lg:col-span-8 bg-slate-50 border border-slate-200 rounded-3xl p-4 shadow-sm flex flex-col justify-between min-h-[450px]">
-                <!-- Interactive Embed Map -->
-                <div class="w-full h-full min-h-[350px] rounded-2xl overflow-hidden border border-slate-200 bg-slate-150">
-                    <iframe 
-                        id="google-maps-embed"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.348638367981!2d112.77663249999999!3d-7.314643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fab364539ef3%3A0x679ff969b8289437!2sJl.%20Rungkut%20Asri%20Timur%20II%20No.12%2C%20Rungkut%20Kidul%2C%20Kec.%20Rungkut%2C%20Surabaya%2C%20Jawa%20Timur%2060293!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
-                        class="w-full h-full border-0" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+        
+        <div class="panel-body">
+            <!-- SISI KIRI: PEMILIHAN CABANG & DATA DASAR -->
+            <div>
+                <div class="form-group">
+                    <label class="panel-label">Pilih Cabang yang Akan Direvisi:</label>
+                    <select id="selectCabang" class="form-control panel-input" onchange="onSelectCabangChange()">
+                        <option value="1">Hananny RK4.1 (Hananny I)</option>
+                        <option value="2">Hananny MA3.2 (Hananny II)</option>
+                        <option value="3">Hananny MA3.1 (Hananny III)</option>
+                        <option value="4">Hananny MA2 (Hananny IV)</option>
+                        <option value="5">Hananny RK4.2 (Hananny V - Coming Soon)</option>
+                        <option value="6">Hananny MA1 (Hananny VI - Coming Soon)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="panel-label">Nama Gedung Kos:</label>
+                    <input type="text" id="editNamaGedung" class="form-control panel-input">
+                </div>
+                <div class="form-group">
+                    <label class="panel-label">Alamat Lengkap Lokasi Fisik:</label>
+                    <input type="text" id="editAlamat" class="form-control panel-input">
+                </div>
+                <div class="form-group">
+                    <label class="panel-label">Kapasitas / Jumlah Total Kamar:</label>
+                    <input type="number" id="editJumlahKamar" class="form-control panel-input">
+                </div>
+                <div class="form-group">
+                    <label class="panel-label">Status Ketersediaan Kamar Saat Ini:</label>
+                    <select id="editStatusKamar" class="form-control panel-input">
+                        <option value="Tersedia">Tersedia</option>
+                        <option value="Terbatas">Terbatas</option>
+                        <option value="Penuh">Penuh</option>
+                    </select>
                 </div>
             </div>
 
-            <!-- Distance Details (Right) -->
-            <div class="lg:col-span-4 bg-slate-900 text-white rounded-3xl p-6 md:p-8 flex flex-col justify-between shadow-lg relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-40 h-40 bg-brand-500/10 rounded-full filter blur-3xl"></div>
-                <div class="relative z-10 space-y-6">
-                    <div class="flex items-center space-x-3 pb-4 border-b border-slate-800">
-                        <div class="bg-brand-500/20 text-brand-400 p-2.5 rounded-xl">
-                            <i class="fa-solid fa-map-location-dot text-xl"></i>
-                        </div>
-                        <div>
-                            <span class="text-[10px] text-slate-400 uppercase tracking-widest font-bold block">Cabang Terpilih</span>
-                            <p id="label-cabang" class="font-extrabold text-brand-400 text-base leading-tight">Hananny Rungkut Asri I</p>
-                        </div>
-                    </div>
-
-                    <div class="space-y-1">
-                        <span class="text-[10px] text-slate-400 uppercase tracking-widest font-bold block">Alamat Cabang</span>
-                        <p id="label-alamat" class="text-sm text-slate-200 font-medium leading-relaxed">Jl. Rungkut Asri Timur II No. 12, Rungkut, Surabaya</p>
-                    </div>
-
-                    <div class="space-y-3 pt-2">
-                        <span class="text-[10px] text-slate-400 uppercase tracking-widest font-bold block">Akses Kampus & Fasilitas Terdekat</span>
-                        
-                        <div id="akses-list" class="space-y-2.5">
-                            <div class="flex items-center justify-between text-xs">
-                                <span class="text-slate-300"><i class="fa-solid fa-graduation-cap text-brand-400 mr-2"></i> UPN Veteran Jatim</span>
-                                <span class="font-bold text-teal-400">± 5 Menit</span>
-                            </div>
-                        </div>
-                    </div>
+            <!-- SISI KANAN: 4 KOLOM PENGATURAN KUSTOM BARU -->
+            <div>
+                <div class="form-group">
+                    <label class="panel-label">Kondisi Fisik Kamar & Fasilitas:</label>
+                    <textarea id="editKondisiFisik" class="form-control panel-input" rows="3" placeholder="Deskripsi status kebersihan, kelayakan kasur, sirkulasi udara kamar..."></textarea>
                 </div>
-
-                <a id="btn-directions" href="https://maps.app.goo.gl/r634nKLa74u98D4U6" target="_blank" class="mt-8 w-full bg-brand-600 hover:bg-brand-500 text-white font-extrabold py-3.5 rounded-xl text-center text-xs shadow-md transition-all duration-300 flex items-center justify-center space-x-2">
-                    <i class="fa-solid fa-location-arrow"></i>
-                    <span>Buka Rute di Google Maps</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ SECTION -->
-    <section id="faq" class="py-16 md:py-24 max-w-4xl mx-auto px-4 sm:px-6">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">Pertanyaan Terkait Jaringan Kost</h2>
-            <div class="h-1.5 w-20 bg-brand-600 mx-auto rounded-full mt-4 mb-4"></div>
-            <p class="text-slate-600 font-medium">Informasi penting mengenai kebijakan administrasi sewa kos di seluruh jaringan Hananny Kost.</p>
-        </div>
-
-        <!-- FAQ Accordion -->
-        <div class="space-y-4">
-            <!-- FAQ Item 1 -->
-            <div class="border border-slate-200 rounded-2xl overflow-hidden transition-colors duration-300 hover:border-brand-300 bg-slate-50">
-                <button class="faq-toggle w-full text-left p-5 flex justify-between items-center focus:outline-none">
-                    <span class="font-extrabold text-slate-900 text-sm md:text-base">Apakah saya bisa berpindah cabang jika ada urusan perkuliahan/kerja?</span>
-                    <span class="faq-icon bg-slate-200 text-slate-800 rounded-full w-6 h-6 flex items-center justify-center text-xs transition-transform duration-300">
-                        <i class="fa-solid fa-plus"></i>
-                    </span>
-                </button>
-                <div class="faq-content hidden p-5 pt-0 border-t border-slate-200/50 text-slate-600 text-sm leading-relaxed">
-                    Bisa! Salah satu keunggulan Hananny Kost Group adalah fleksibilitas pindah cabang. Jika kamar di cabang tujuan tersedia, Anda dapat mengajukan perpindahan tanpa dikenai denda pemutusan kontrak sewa.
+                <div class="form-group">
+                    <label class="panel-label">Standar Fasilitas Terlengkap:</label>
+                    <input type="text" id="editFasilitasTerlengkap" class="form-control panel-input" placeholder="Contoh: Kamar Mandi Dalam, Kasur, Lemari, WiFi">
                 </div>
-            </div>
-
-            <!-- FAQ Item 2 -->
-            <div class="border border-slate-200 rounded-2xl overflow-hidden transition-colors duration-300 hover:border-brand-300 bg-slate-50">
-                <button class="faq-toggle w-full text-left p-5 flex justify-between items-center focus:outline-none">
-                    <span class="font-extrabold text-slate-900 text-sm md:text-base">Apakah sistem pembayaran sewa terpusat?</span>
-                    <span class="faq-icon bg-slate-200 text-slate-800 rounded-full w-6 h-6 flex items-center justify-center text-xs transition-transform duration-300">
-                        <i class="fa-solid fa-plus"></i>
-                    </span>
-                </button>
-                <div class="faq-content hidden p-5 pt-0 border-t border-slate-200/50 text-slate-600 text-sm leading-relaxed">
-                    Ya, seluruh sistem administrasi dan pembayaran sewa bulanan dilakukan secara terpusat melalui Transfer Rekening Management Resmi Hananny Kost atau langsung kepada Pengelola Utama demi keamanan dan kenyamanan pelaporan keuangan Anda.
+                <div class="form-group">
+                    <label class="panel-label">Biaya Sewa Bersahabat (Angka/Teks Nominal):</label>
+                    <input type="text" id="editBiayaBersahabat" class="form-control panel-input" placeholder="Contoh: Mulai dari Rp 750.000 / bulan">
                 </div>
-            </div>
-
-            <!-- FAQ Item 3 -->
-            <div class="border border-slate-200 rounded-2xl overflow-hidden transition-colors duration-300 hover:border-brand-300 bg-slate-50">
-                <button class="faq-toggle w-full text-left p-5 flex justify-between items-center focus:outline-none">
-                    <span class="font-extrabold text-slate-900 text-sm md:text-base">Apakah fasilitas WiFi lancar di semua cabang?</span>
-                    <span class="faq-icon bg-slate-200 text-slate-800 rounded-full w-6 h-6 flex items-center justify-center text-xs transition-transform duration-300">
-                        <i class="fa-solid fa-plus"></i>
-                    </span>
-                </button>
-                <div class="faq-content hidden p-5 pt-0 border-t border-slate-200/50 text-slate-600 text-sm leading-relaxed">
-                    Tentu saja. Kami bekerja sama dengan penyedia jasa internet (ISP) serat optik terbaik untuk memastikan kelancaran akses perkuliahan online, pengerjaan tugas akhir, hingga aktivitas hiburan harian di seluruh area kamar.
+                <div class="form-group">
+                    <label class="panel-label">Keterangan Cabang Terpilih (Rekomendasi Info):</label>
+                    <input type="text" id="editCabangTerpilih" class="form-control panel-input" placeholder="Contoh: Cabang Terfavorit Dekat Kampus UPN">
+                </div>
+                
+                <div class="form-group" style="margin-top: 25px; background: #1e293b; padding: 15px; border-radius: 8px; border: 1px dashed #475569;">
+                    <label class="panel-label">⚙️ Pengaturan Global WhatsApp Owner:</label>
+                    <input type="text" id="editGlobalWA" class="form-control panel-input" value="6281357036283" placeholder="Format: 628123xxx">
+                    <span style="font-size: 0.8rem; color: #94a3b8; display: block; margin-top: 4px;">* Seluruh formulir pemesanan umum akan dialirkan otomatis ke nomor WA ini.</span>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-slate-900 text-white pt-16 pb-12 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 border-b border-slate-800">
-                <!-- Brand Footer -->
-                <div class="md:col-span-2 space-y-4">
-                    <div class="flex items-center space-x-3">
-                        <div class="bg-brand-600 text-white p-2 rounded-xl flex items-center justify-center">
-                            <i class="fa-solid fa-hotel text-lg"></i>
-                        </div>
-                        <span class="text-lg font-extrabold text-slate-100 tracking-tight">HANANNY KOST GROUP</span>
-                    </div>
-                    <p class="text-xs md:text-sm text-slate-400 max-w-sm leading-relaxed">
-                        Penyedia hunian kos pria modern dengan 7 cabang strategis yang tersebar di wilayah administratif Surabaya Timur dan Selatan. Kami mengedepankan keamanan dan keasrian lingkungan tinggal.
-                    </p>
-                </div>
-
-                <!-- Tipe Kamar Links -->
-                <div>
-                    <h4 class="font-bold text-slate-200 text-sm mb-4 uppercase tracking-wider">Tipe Kamar</h4>
-                    <ul class="space-y-2 text-xs md:text-sm text-slate-400">
-                        <li><a href="#harga" class="hover:text-brand-400 transition-colors">Tipe Standard (Kipas)</a></li>
-                        <li><a href="#harga" class="hover:text-brand-400 transition-colors">Tipe Premium (Sirkulasi Luas)</a></li>
-                        <li><a href="#harga" class="hover:text-brand-400 transition-colors">Tipe Deluxe AC (K. Mandi Dalam)</a></li>
-                    </ul>
-                </div>
-
-                <!-- Kontak Owner -->
-                <div>
-                    <h4 class="font-bold text-slate-200 text-sm mb-4 uppercase tracking-wider">Hubungi Admin Jaringan</h4>
-                    <p class="text-xs md:text-sm text-slate-400 leading-relaxed mb-3">
-                        Silakan kirimkan pertanyaan atau jadwalkan survey Anda langsung ke kontak terpadu pengelola kos di bawah ini.
-                    </p>
-                    <div class="flex items-center space-x-2 text-brand-400 font-extrabold text-sm md:text-base">
-                        <i class="fa-solid fa-phone"></i>
-                        <span id="footer-wa-label">+62 813-5703-6283</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Footer Bottom -->
-            <div class="pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
-                <p>&copy; 2026 Hananny Kost Group Surabaya. Hak Cipta Dilindungi.</p>
-                <div class="flex space-x-4 mt-4 md:mt-0">
-                    <a href="#cabang" class="hover:text-slate-300">Cabang</a>
-                    <a href="#galeri" class="hover:text-slate-300">Galeri</a>
-                    <a href="#fasilitas" class="hover:text-slate-300">Fasilitas</a>
-                    <a href="#harga" class="hover:text-slate-300">Biaya</a>
-                    <button onclick="requestOwnerAuth()" class="hover:text-brand-400 font-semibold flex items-center space-x-1">
-                        <i class="fa-solid fa-cog"></i> <span>Owner Panel</span>
-                    </button>
-                </div>
-            </div>
+        <div class="panel-footer">
+            <button class="btn btn-secondary" onclick="closeOwnerPanel()">Batal</button>
+            <button class="btn" style="background-color: #38bdf8; color: #0f172a;" onclick="simpanPerubahanCabang()">💾 Simpan & Perbarui Tampilan Website</button>
         </div>
+    </div>
+
+    <!-- UTAMA FOOTER -->
+    <footer>
+        <p>&copy; 2026 Hananny Kost Group Jaringan Surabaya. Sistem Pengelolaan Terpadu Dua Antarmuka.</p>
     </footer>
 
-    <!-- PASSCODE MODAL FOR OWNER SECURITY -->
-    <div id="auth-modal" class="hidden fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
-        <div class="relative bg-slate-900 border border-slate-800 rounded-3xl p-6 md:p-8 w-full max-w-md shadow-2xl space-y-6 text-center text-white">
-            <div class="w-16 h-16 bg-brand-500/20 text-brand-400 rounded-full flex items-center justify-center mx-auto text-2xl">
-                <i class="fa-solid fa-lock"></i>
-            </div>
-            <div>
-                <h3 class="text-xl font-extrabold text-slate-100">Verifikasi Akses Pemilik</h3>
-                <p class="text-slate-400 text-xs mt-1">Masukkan PIN Keamanan Owner untuk mengedit data cabang dan foto.</p>
-            </div>
-            <div class="space-y-2">
-                <input id="auth-pin" type="password" maxlength="6" class="w-full text-center text-2xl font-bold tracking-widest bg-slate-950 border border-slate-800 p-3 rounded-xl focus:outline-none focus:border-brand-500 text-white" placeholder="••••">
-                <span class="text-[10px] text-yellow-500/80 block italic">*KHUSUS AKSES OWNER HANANNY KOS</span>
-            </div>
-            <div class="flex space-x-3">
-                <button onclick="closeOwnerAuth()" class="w-1/2 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold py-3 rounded-xl transition-colors">Batal</button>
-                <button onclick="verifyOwnerPIN()" class="w-1/2 bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold py-3 rounded-xl transition-colors">Masuk Panel</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- OWNER SETTINGS CONTROL PANEL (TABS EXPANDED WITH 7 BRANCH EDITOR) -->
-    <div id="owner-panel" class="hidden fixed inset-x-0 bottom-0 z-40 bg-slate-900 text-white border-t border-brand-500 shadow-2xl p-6 transition-all duration-300 max-h-[85vh] overflow-y-auto">
-        <div class="max-w-5xl mx-auto space-y-6">
-            <!-- Header Panel -->
-            <div class="flex justify-between items-center border-b border-slate-800 pb-3">
-                <div class="flex items-center space-x-3">
-                    <i class="fa-solid fa-sliders text-brand-400 text-xl"></i>
-                    <div>
-                        <h3 class="font-bold text-lg text-slate-100 leading-none">Panel Kontrol Owner (Premium)</h3>
-                        <span class="text-[10px] text-slate-400 uppercase tracking-widest mt-1 block">Hananny Kost Group</span>
-                    </div>
-                </div>
-                <div class="flex items-center space-x-3">
-                    <!-- Tab Switcher buttons -->
-                    <button id="tab-btn-umum" onclick="switchOwnerTab('umum')" class="text-xs font-extrabold px-4 py-2 bg-brand-600 text-white rounded-xl transition-all">
-                        <i class="fa-solid fa-gears mr-1"></i> Pengaturan Umum
-                    </button>
-                    <button id="tab-btn-cabang" onclick="switchOwnerTab('cabang')" class="text-xs font-extrabold px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl transition-all">
-                        <i class="fa-solid fa-building mr-1"></i> Kelola 7 Cabang
-                    </button>
-                    <button onclick="toggleOwnerPanel(false)" class="text-slate-400 hover:text-white p-1">
-                        <i class="fa-solid fa-times text-xl"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- ================= TAB CONTENT 1: UMUM ================= -->
-            <div id="tab-content-umum" class="space-y-6">
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                    <!-- No WhatsApp Admin -->
-                    <div>
-                        <label class="block text-[10px] uppercase font-bold text-slate-400 mb-1">Nomor WhatsApp Jaringan (Kode 62)</label>
-                        <input id="owner-wa" type="text" value="6281357036283" class="w-full bg-slate-950 border border-slate-800 p-2.5 rounded-lg text-xs focus:outline-none focus:border-brand-500 text-white" placeholder="Contoh: 6281357036283">
-                    </div>
-
-                    <!-- Google Drive Foto Link -->
-                    <div>
-                        <label class="block text-[10px] uppercase font-bold text-slate-400 mb-1">Link Google Drive Foto (Jaringan)</label>
-                        <input id="owner-gdrive" type="text" value="https://drive.google.com/open?id=1D-NCGWLwVBdDy8R7e4snuycGEYjg4DCN" class="w-full bg-slate-950 border border-slate-800 p-2.5 rounded-lg text-xs focus:outline-none focus:border-brand-500 text-white" placeholder="Masukan link folder Google Drive">
-                    </div>
-
-                    <!-- Google Maps Link Rute Utama -->
-                    <div>
-                        <label class="block text-[10px] uppercase font-bold text-slate-400 mb-1">Link Maps Rute Utama</label>
-                        <input id="owner-maps" type="text" value="https://maps.app.goo.gl/r634nKLa74u98D4U6" class="w-full bg-slate-950 border border-slate-800 p-2.5 rounded-lg text-xs focus:outline-none focus:border-brand-500 text-white" placeholder="Masukan rute / share link maps">
-                    </div>
-
-                    <!-- Ganti Passcode PIN -->
-                    <div>
-                        <label class="block text-[10px] uppercase font-bold text-slate-400 mb-1">PIN Panel Baru</label>
-                        <input id="owner-pin" type="password" value="1234" class="w-full bg-slate-950 border border-slate-800 p-2.5 rounded-lg text-xs focus:outline-none focus:border-brand-500 text-white" placeholder="Masukkan 4-6 digit angka">
-                    </div>
-                </div>
-
-                <!-- Manajemen Foto Galeri Standar -->
-                <div class="border-t border-slate-800 pt-4">
-                    <h4 class="text-xs font-extrabold uppercase tracking-widest text-brand-400 mb-2"><i class="fa-solid fa-images mr-1"></i> Ganti Foto Kamar Standar Utama</h4>
-                    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
-                        <!-- Foto 1 -->
-                        <div class="bg-slate-950 p-3 rounded-xl border border-slate-850 space-y-2">
-                            <span class="text-[10px] font-bold text-brand-300 block">Foto 1 (Deluxe AC)</span>
-                            <input type="file" id="file-kamar-1" accept="image/*" onchange="previewLocalImage(this, 'img-kamar-1')" class="hidden">
-                            <button type="button" onclick="document.getElementById('file-kamar-1').click()" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] py-1.5 px-2 rounded font-semibold text-center block transition-colors">
-                                <i class="fa-solid fa-upload mr-1"></i> Pilih File
-                            </button>
-                            <input id="url-kamar-1" type="text" class="w-full bg-slate-900 border border-slate-800 p-1.5 rounded text-[10px] text-white focus:outline-none" placeholder="Tautan / Nama file">
-                        </div>
-
-                        <!-- Foto 2 -->
-                        <div class="bg-slate-950 p-3 rounded-xl border border-slate-850 space-y-2">
-                            <span class="text-[10px] font-bold text-brand-300 block">Foto 2 (Premium)</span>
-                            <input type="file" id="file-kamar-2" accept="image/*" onchange="previewLocalImage(this, 'img-kamar-2')" class="hidden">
-                            <button type="button" onclick="document.getElementById('file-kamar-2').click()" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] py-1.5 px-2 rounded font-semibold text-center block transition-colors">
-                                <i class="fa-solid fa-upload mr-1"></i> Pilih File
-                            </button>
-                            <input id="url-kamar-2" type="text" class="w-full bg-slate-900 border border-slate-800 p-1.5 rounded text-[10px] text-white focus:outline-none" placeholder="Tautan / Nama file">
-                        </div>
-
-                        <!-- Foto 3 -->
-                        <div class="bg-slate-950 p-3 rounded-xl border border-slate-850 space-y-2">
-                            <span class="text-[10px] font-bold text-brand-300 block">Foto 3 (K. Mandi)</span>
-                            <input type="file" id="file-kamar-3" accept="image/*" onchange="previewLocalImage(this, 'img-kamar-3')" class="hidden">
-                            <button type="button" onclick="document.getElementById('file-kamar-3').click()" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] py-1.5 px-2 rounded font-semibold text-center block transition-colors">
-                                <i class="fa-solid fa-upload mr-1"></i> Pilih File
-                            </button>
-                            <input id="url-kamar-3" type="text" class="w-full bg-slate-900 border border-slate-800 p-1.5 rounded text-[10px] text-white focus:outline-none" placeholder="Tautan / Nama file">
-                        </div>
-
-                        <!-- Foto 4 -->
-                        <div class="bg-slate-950 p-3 rounded-xl border border-slate-850 space-y-2">
-                            <span class="text-[10px] font-bold text-brand-300 block">Foto 4 (Dapur)</span>
-                            <input type="file" id="file-kamar-4" accept="image/*" onchange="previewLocalImage(this, 'img-kamar-4')" class="hidden">
-                            <button type="button" onclick="document.getElementById('file-kamar-4').click()" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] py-1.5 px-2 rounded font-semibold text-center block transition-colors">
-                                <i class="fa-solid fa-upload mr-1"></i> Pilih File
-                            </button>
-                            <input id="url-kamar-4" type="text" class="w-full bg-slate-900 border border-slate-800 p-1.5 rounded text-[10px] text-white focus:outline-none" placeholder="Tautan / Nama file">
-                        </div>
-
-                        <!-- Foto 5 -->
-                        <div class="bg-slate-950 p-3 rounded-xl border border-slate-850 space-y-2">
-                            <span class="text-[10px] font-bold text-brand-300 block">Foto 5 (Parkir)</span>
-                            <input type="file" id="file-kamar-5" accept="image/*" onchange="previewLocalImage(this, 'img-kamar-5')" class="hidden">
-                            <button type="button" onclick="document.getElementById('file-kamar-5').click()" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] py-1.5 px-2 rounded font-semibold text-center block transition-colors">
-                                <i class="fa-solid fa-upload mr-1"></i> Pilih File
-                            </button>
-                            <input id="url-kamar-5" type="text" class="w-full bg-slate-900 border border-slate-800 p-1.5 rounded text-[10px] text-white focus:outline-none" placeholder="Tautan / Nama file">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ================= TAB CONTENT 2: 7 CABANG ================= -->
-            <div id="tab-content-cabang" class="hidden space-y-6">
-                <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 flex flex-col md:flex-row md:items-center justify-between gap-4">
-                    <div class="space-y-1">
-                        <span class="text-xs font-extrabold text-brand-400 uppercase tracking-wider block">Pilih Cabang untuk Diedit</span>
-                        <p class="text-[10px] text-slate-400">Silakan pilih nomor cabang dari 1 sampai 7 untuk memuat dan mengedit datanya secara presisi.</p>
-                    </div>
-                    <div>
-                        <select id="owner-edit-cabang-select" onchange="loadCabangToForm()" class="bg-slate-900 border-2 border-brand-500 rounded-xl p-3 text-white text-xs font-bold focus:outline-none w-full md:w-64">
-                            <option value="1">Cabang 1: Hananny Rungkut Asri</option>
-                            <option value="2">Cabang 2: Hananny UPN Eksklusif</option>
-                            <option value="3">Cabang 3: Hananny SIER Premium</option>
-                            <option value="4">Cabang 4: Hananny Cabang MA2-IV</option>
-                            <option value="5">Cabang 5: Hananny Cabang MA3.1-III</option>
-                            <option value="6">Cabang 6: Hananny Gunung Anyar</option>
-                            <option value="7">Cabang 7: Hananny Keputih (ITS)</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 bg-slate-950/40 p-5 rounded-3xl border border-slate-850">
-                    <!-- Detail Cabang Left (Form Inputs) -->
-                    <div class="md:col-span-8 space-y-4">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <!-- Nama Cabang -->
-                            <div>
-                                <label class="block text-[10px] uppercase font-bold text-slate-400 mb-1">Nama Gedung Cabang</label>
-                                <input id="edit-cab-nama" type="text" class="w-full bg-slate-900 border border-slate-800 p-2.5 rounded-lg text-xs focus:outline-none focus:border-brand-500 text-white">
-                            </div>
-                            <!-- Tag Area -->
-                            <div>
-                                <label class="block text-[10px] uppercase font-bold text-slate-400 mb-1">Tag/Label Area (e.g., UPN Eksklusif)</label>
-                                <input id="edit-cab-tag" type="text" class="w-full bg-slate-900 border border-slate-800 p-2.5 rounded-lg text-xs focus:outline-none focus:border-brand-500 text-white">
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <!-- Alamat Ringkas -->
-                            <div class="md:col-span-2">
-                                <label class="block text-[10px] uppercase font-bold text-slate-400 mb-1">Alamat Pendek (Katalog)</label>
-                                <input id="edit-cab-alamat" type="text" class="w-full bg-slate-900 border border-slate-800 p-2.5 rounded-lg text-xs focus:outline-none focus:border-brand-500 text-white">
-                            </div>
-                            <!-- Harga Mulai -->
-                            <div>
-                                <label class="block text-[10px] uppercase font-bold text-slate-400 mb-1">Harga Mulai (Angka Saja / Rp)</label>
-                                <input id="edit-cab-harga" type="text" class="w-full bg-slate-900 border border-slate-800 p-2.5 rounded-lg text-xs focus:outline-none focus:border-brand-500 text-white">
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <!-- Status Badges -->
-                            <div>
-                                <label class="block text-[10px] uppercase font-bold text-slate-400 mb-1">Status Ketersediaan</label>
-                                <select id="edit-cab-status" class="w-full bg-slate-900 border border-slate-800 p-2.5 rounded-lg text-xs focus:outline-none focus:border-brand-500 text-white">
-                                    <option value="Tersedia">Tersedia</option>
-                                    <option value="Sisa 2 Kamar">Sisa 2 Kamar</option>
-                                    <option value="Sisa 1 Kamar">Sisa 1 Kamar</option>
-                                    <option value="Penuh">Penuh / Waiting List</option>
-                                </select>
-                            </div>
-                            <!-- Badge Color -->
-                            <div>
-                                <label class="block text-[10px] uppercase font-bold text-slate-400 mb-1">Warna Badge Status</label>
-                                <select id="edit-cab-status-color" class="w-full bg-slate-900 border border-slate-800 p-2.5 rounded-lg text-xs focus:outline-none focus:border-brand-500 text-white">
-                                    <option value="green">Hijau (Tersedia)</option>
-                                    <option value="amber">Kuning / Oranye (Terbatas)</option>
-                                    <option value="red">Merah (Penuh)</option>
-                                </select>
-                            </div>
-                            <!-- Cabang Tags -->
-                            <div>
-                                <label class="block text-[10px] uppercase font-bold text-slate-400 mb-1">3 Tag Fasilitas (Pisah Koma)</label>
-                                <input id="edit-cab-tags-list" type="text" class="w-full bg-slate-900 border border-slate-800 p-2.5 rounded-lg text-xs focus:outline-none focus:border-brand-500 text-white" placeholder="Contoh: Free WiFi, AC, Dekat UPN">
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 border-t border-slate-800/60 pt-4">
-                            <!-- Google Maps Embed URL -->
-                            <div>
-                                <label class="block text-[10px] uppercase font-bold text-slate-400 mb-1">Google Maps Iframe URL (Atribut SRC saja)</label>
-                                <input id="edit-cab-maps-embed" type="text" class="w-full bg-slate-900 border border-slate-800 p-2.5 rounded-lg text-xs focus:outline-none focus:border-brand-500 text-white" placeholder="https://www.google.com/maps/embed?...">
-                            </div>
-                            <!-- Google Maps Share Link -->
-                            <div>
-                                <label class="block text-[10px] uppercase font-bold text-slate-400 mb-1">Google Maps Share Link (Rute Navigasi)</label>
-                                <input id="edit-cab-maps-link" type="text" class="w-full bg-slate-900 border border-slate-800 p-2.5 rounded-lg text-xs focus:outline-none focus:border-brand-500 text-white" placeholder="https://maps.app.goo.gl/... ">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Detail Cabang Right (4 Akses Terdekat) -->
-                    <div class="md:col-span-4 bg-slate-900/60 p-4 rounded-2xl border border-slate-800 space-y-4">
-                        <span class="text-[10px] font-extrabold uppercase tracking-widest text-brand-300 block border-b border-slate-800 pb-2"><i class="fa-solid fa-map-location-dot mr-1"></i> 4 Titik Akses Terdekat</span>
-                        
-                        <!-- Akses 1 -->
-                        <div class="grid grid-cols-2 gap-2">
-                            <input id="edit-cab-akses-t1" type="text" class="bg-slate-950 border border-slate-800 p-2 rounded text-[10px] text-white focus:outline-none" placeholder="Tempat 1">
-                            <input id="edit-cab-akses-j1" type="text" class="bg-slate-950 border border-slate-800 p-2 rounded text-[10px] text-white focus:outline-none" placeholder="Waktu (e.g. ± 5 Mnt)">
-                        </div>
-                        <!-- Akses 2 -->
-                        <div class="grid grid-cols-2 gap-2">
-                            <input id="edit-cab-akses-t2" type="text" class="bg-slate-950 border border-slate-800 p-2 rounded text-[10px] text-white focus:outline-none" placeholder="Tempat 2">
-                            <input id="edit-cab-akses-j2" type="text" class="bg-slate-950 border border-slate-800 p-2 rounded text-[10px] text-white focus:outline-none" placeholder="Waktu">
-                        </div>
-                        <!-- Akses 3 -->
-                        <div class="grid grid-cols-2 gap-2">
-                            <input id="edit-cab-akses-t3" type="text" class="bg-slate-950 border border-slate-800 p-2 rounded text-[10px] text-white focus:outline-none" placeholder="Tempat 3">
-                            <input id="edit-cab-akses-j3" type="text" class="bg-slate-950 border border-slate-800 p-2 rounded text-[10px] text-white focus:outline-none" placeholder="Waktu">
-                        </div>
-                        <!-- Akses 4 -->
-                        <div class="grid grid-cols-2 gap-2">
-                            <input id="edit-cab-akses-t4" type="text" class="bg-slate-950 border border-slate-800 p-2 rounded text-[10px] text-white focus:outline-none" placeholder="Tempat 4">
-                            <input id="edit-cab-akses-j4" type="text" class="bg-slate-950 border border-slate-800 p-2 rounded text-[10px] text-white focus:outline-none" placeholder="Waktu">
-                        </div>
-
-                        <!-- Update Branch Button -->
-                        <button onclick="updateCabangData()" class="w-full bg-teal-600 hover:bg-teal-500 text-white font-extrabold text-xs py-3 rounded-xl shadow transition-colors flex items-center justify-center space-x-2">
-                            <i class="fa-solid fa-circle-check"></i>
-                            <span>Simpan Perubahan Cabang</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tombol Aksi Panel Bawah -->
-            <div class="pt-3 border-t border-slate-800 flex justify-between items-center">
-                <span class="text-[10px] text-yellow-400 italic font-medium">*Jangan lupa mengklik tombol "Simpan & Terapkan" di bawah untuk menerapkan seluruh data umum Anda!</span>
-                <button onclick="saveOwnerSettings()" class="bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs py-2.5 px-6 rounded-xl shadow transition-colors flex items-center space-x-1.5">
-                    <i class="fa-solid fa-floppy-disk"></i> <span>Terapkan Semua & Tutup</span>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- SCRIPT FOR DYNAMIC ACTIONS & MULTI-BRANCH DATA -->
+    <!-- JAVASCRIPT LOGIC ENGINE -->
     <script>
-        // Jaringan 7 Cabang Database Utama (Dibuat dapat dimutasi/diedit secara real-time)
-        let cabangData = {
-            1: {
-                id: 1,
-                tagArea: "Rungkut I (Pusat)",
+        // GLOBAL SETTING
+        let nomorWhatsAppOwner = "6281357036283";
+
+        // DATABASE INTERNAL 6 CABANG MENYESUAIKAN FOTO TABEL EXCEL USER
+        const databaseCabang = {
+            "1": {
+                nama: "Hananny RK4.1 (Hananny I)",
+                alamat: "Jln. Rungkut Asri Timur II no. 12",
+                jumlahKamar: 14,
                 status: "Tersedia",
-                statusColor: "green",
-                nama: "Hananny Rungkut Asri",
-                alamat: "Jl. Rungkut Asri Timur II No. 12, Surabaya",
-                harga: "650.000",
-                tags: ["Free WiFi", "Dekat UPN", "Dapur Umum"],
-                mapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.348638367981!2d112.77663249999999!3d-7.314643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fab364539ef3%3A0x679ff969b8289437!2sJl.%20Rungkut%20Asri%20Timur%20II%20No.12%2C%20Rungkut%20Kidul%2C%20Kec.%20Rungkut%2C%20Surabaya%2C%20Jawa%20Timur%2060293!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid",
-                mapsLink: "https://maps.app.goo.gl/r634nKLa74u98D4U6",
-                akses: [
-                    { tempat: "UPN Veteran Jatim", jarak: "± 5 Menit" },
-                    { tempat: "UBAYA Kampus Tenggilis", jarak: "± 10 Menit" },
-                    { tempat: "Kawasan Industri SIER", jarak: "± 3 Menit" },
-                    { tempat: "Transmart Rungkut", jarak: "± 4 Menit" }
-                ]
+                kondisiFisik: "Kamar bersih terawat, sirkulasi udara optimal dan siap huni langsung.",
+                fasilitasTerlengkap: "Kamar Mandi Dalam, Kasur Busa Super, Lemari Pakaian, WiFi High-Speed.",
+                biayaBersahabat: "Rp 750.000",
+                cabangTerpilihInfo: "Cabang Utama Rungkut (Dekat Jalur Fasilitas Umum)",
+                mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.2681534063234!2d112.781682!3d-7.323719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fab3809df655%3A0x64e7df0797b10214!2sJl.%20Rungkut%20Asri%20Timur%20II%20No.12!5e0!3m2!1sid!2sid!4v1710000000000!5m2!1sid!2sid"
             },
-            2: {
-                id: 2,
-                tagArea: "Medokan I",
-                status: "Sisa 2 Kamar",
-                statusColor: "amber",
-                nama: "Hananny UPN Eksklusif",
-                alamat: "Medokan Ayu Blok MA III (Dekat Kampus UPN), Surabaya",
-                harga: "800.000",
-                tags: ["AC & Non AC", "1 Mnt UPN", "K. Mandi Dalam"],
-                mapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.300582260662!2d112.7871231!3d-7.3195254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7faae14b9cd41%3A0x446ff2e8c25cf6ab!2sUPN%20%22Veteran%22%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid",
-                mapsLink: "https://maps.app.goo.gl/r634nKLa74u98D4U6",
-                akses: [
-                    { tempat: "Gerbang Utama UPN Jatim", jarak: "± 1 Menit (Jalan Kaki)" },
-                    { tempat: "MERR Ir. Soekarno", jarak: "± 4 Menit" },
-                    { tempat: "Yakaya Rungkut", jarak: "± 5 Menit" },
-                    { tempat: "Galaxy Mall", jarak: "± 12 Menit" }
-                ]
-            },
-            3: {
-                id: 3,
-                tagArea: "Rungkut Industri",
+            "2": {
+                nama: "Hananny MA3.2 (Hananny II)",
+                alamat: "Jln. Medokan Asri Utara IX Blok M-44",
+                jumlahKamar: 27,
                 status: "Tersedia",
-                statusColor: "green",
-                nama: "Hananny SIER Premium",
-                alamat: "Rungkut Industri Tengah (Dekat Kawasan Bisnis SIER), Surabaya",
-                harga: "750.000",
-                tags: ["Parkir Luas", "Dekat Pabrik", "CCTV 24 Jam"],
-                mapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.3912197598816!2d112.7600!3d-7.3200!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fa9183921b3d%3A0x868cb5a6faef88b1!2sSurabaya%20Industrial%20Estate%20Rungkut!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid",
-                mapsLink: "https://maps.app.goo.gl/r634nKLa74u98D4U6",
-                akses: [
-                    { tempat: "Kawasan Industri SIER", jarak: "± 1 Menit" },
-                    { tempat: "Pintu Tol Rungkut", jarak: "± 5 Menit" },
-                    { tempat: "Stasiun Jemursari", jarak: "± 8 Menit" },
-                    { tempat: "Plaza Marina", jarak: "± 10 Menit" }
-                ]
+                kondisiFisik: "Bangunan modern kokoh, lingkungan asri, tenang dan sangat kondusif.",
+                fasilitasTerlengkap: "Kamar Mandi Dalam, WiFi Dedicated 100Mbps, Dapur Bersama, Parkir Luas.",
+                biayaBersahabat: "Rp 800.000",
+                cabangTerpilihInfo: "Cabang Medokan Asri Blok M (Terfavorit Kedua)",
+                mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.2530111102!2d112.789121!3d-7.325412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fab524e4d6bf%3A0x9bb09ffddc716fa5!2sJl.%20Medokan%20Asri%20Utara%20IX!5e0!3m2!1sid!2sid!4v1710000000001!5m2!1sid!2sid"
             },
-            4: {
-                id: 4,
-                tagArea: "Rungkut II",
+            "3": {
+                nama: "Hananny MA3.1 (Hananny III)",
+                alamat: "Jln. Medokan Asri Utara VII Blok G-28",
+                jumlahKamar: 23,
+                status: "Tersedia",
+                kondisiFisik: "Kondisi fisik bangunan prima, sirkulasi cahaya luar masuk sangat baik.",
+                fasilitasTerlengkap: "Kamar Mandi Dalam, Full Furnished Meja Kursi Kasur, Akses Kunci Bebas.",
+                biayaBersahabat: "Rp 800.000",
+                cabangTerpilihInfo: "Cabang Medokan Asri Blok G (Akses Minim Market Mudah)",
+                mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.2550000000003!2d112.788500!3d-7.325200!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMTknMzAuNyJTIDExMsKwNDcnMTguNiJF!5e0!3m2!1sid!2sid!4v1710000000002!5m2!1sid!2sid"
+            },
+            "4": {
+                nama: "Hananny MA2 (Hananny IV)",
+                alamat: "Jln. Medokan Asri Tengah IV Blok R-26",
+                jumlahKamar: 27,
+                status: "Tersedia",
+                kondisiFisik: "Kamar bersih higienis berkala, keamanan lingkungan kompleks terjaga penuh.",
+                fasilitasTerlengkap: "Kamar Mandi Dalam, Springbed Empuk, Lemari Pakaian Dua Pintu, WiFi.",
+                biayaBersahabat: "Rp 850.000",
+                cabangTerpilihInfo: "Cabang Premium Medokan Asri Tengah",
+                mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.25123456789!2d112.787654!3d-7.325678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMTknMzIuNCJTIDExMsKwNDcnMTUuNiJF!5e0!3m2!1sid!2sid!4v1710000000003!5m2!1sid!2sid"
+            },
+            "5": {
+                nama: "Hananny RK4.2 (Hananny V - Coming Soon)",
+                alamat: "Jln. Rungkut Asri Timur VII Blok C-8",
+                jumlahKamar: 27,
                 status: "Penuh",
-                statusColor: "red",
-                nama: "Hananny Cabang MA2-IV",
-                alamat: "Jl. Medokan Ayu II Blok IV No. 8, Surabaya",
-                harga: "600.000",
-                tags: ["Hemat Saku", "WiFi Unlimited", "Kipas Angin"],
-                mapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.3090902808076!2d112.7890!3d-7.3175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7faae39efc5bf%3A0xbd8ab599b8289437!2sJl.%20Medokan%20Ayu%20II%2C%20Medokan%20Ayu%2C%20Kec.%20Rungkut%2C%20Surabaya!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid",
-                mapsLink: "https://maps.app.goo.gl/r634nKLa74u98D4U6",
-                akses: [
-                    { tempat: "Kampus UPN Veteran", jarak: "± 3 Menit" },
-                    { tempat: "Superindo MERR", jarak: "± 6 Menit" },
-                    { tempat: "Gereja YAKOBUS", jarak: "± 5 Menit" },
-                    { tempat: "Pasar Soponyono", jarak: "± 7 Menit" }
-                ]
+                kondisiFisik: "Gedung baru gres modern minimalis, tahap penyelesaian akhir interior.",
+                fasilitasTerlengkap: "Kamar Mandi Dalam Desain Baru, AC / Non-AC, WiFi Sistem Fiber.",
+                biayaBersahabat: "Segera Hadir (Harga Promo)",
+                cabangTerpilihInfo: "Rekomendasi Utama Cabang Baru Eksklusif",
+                mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.2600000000002!2d112.782000!3d-7.323500!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMTknMjQuNiJTIDExMsKwNDYnNTUuMiJF!5e0!3m2!1sid!2sid!4v1710000000004!5m2!1sid!2sid"
             },
-            5: {
-                id: 5,
-                tagArea: "Rungkut III",
-                status: "Tersedia",
-                statusColor: "green",
-                nama: "Hananny Cabang MA3.1-III",
-                alamat: "Jl. Medokan Ayu MA III-A No. 15, Surabaya",
-                harga: "650.000",
-                tags: ["Bebas Jam Malam", "Lingkungan Tenang", "Free WiFi"],
-                mapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.3090902808076!2d112.7890!3d-7.3175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7faae39efc5bf%3A0xbd8ab599b8289437!2sJl.%20Medokan%20Ayu%20MA%20III%2C%20Medokan%20Ayu%2C%20Kec.%20Rungkut%2C%20Surabaya!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid",
-                mapsLink: "https://maps.app.goo.gl/r634nKLa74u98D4U6",
-                akses: [
-                    { tempat: "UPN Veteran Jatim", jarak: "± 4 Menit" },
-                    { tempat: "Politeknik Pelayaran Sby", jarak: "± 8 Menit" },
-                    { tempat: "MERR Ir. Soekarno", jarak: "± 6 Menit" },
-                    { tempat: "Pasar Tradisional Medokan", jarak: "± 3 Menit" }
-                ]
-            },
-            6: {
-                id: 6,
-                tagArea: "Gunung Anyar",
-                status: "Tersedia",
-                statusColor: "green",
-                nama: "Hananny Gunung Anyar",
-                alamat: "Perumahan Gunung Anyar Indah, Gunung Anyar, Surabaya",
-                harga: "700.000",
-                tags: ["Gedung Baru", "Akses Tol", "Balkon Luas"],
-                mapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.1990802808076!2d112.7930!3d-7.3315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fab9e9efc5bf%3A0xbd8ab599b8289437!2sGunung%20Anyar%2C%20Kec.%20Gunung%20Anyar%2C%20Surabaya!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid",
-                mapsLink: "https://maps.app.goo.gl/r634nKLa74u98D4U6",
-                akses: [
-                    { tempat: "Kampus UINSA Gunung Anyar", jarak: "± 3 Menit" },
-                    { tempat: "Pintu Tol Tambak Sumur", jarak: "± 5 Menit" },
-                    { tempat: "Bandara Juanda T1", jarak: "± 15 Menit" },
-                    { tempat: "Giant Pondok Chandra", jarak: "± 7 Menit" }
-                ]
-            },
-            7: {
-                id: 7,
-                tagArea: "Keputih (ITS)",
-                status: "Sisa 1 Kamar",
-                statusColor: "amber",
-                nama: "Hananny Keputih (ITS)",
-                alamat: "Jl. Keputih Tegal No. 42, Keputih, Surabaya",
-                harga: "750.000",
-                tags: ["Dekat ITS", "Banyak Kuliner", "Area Tenang"],
-                mapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.5912197598816!2d112.7960!3d-7.2950!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fa1aa3921b3d%3A0x868cb5a6faef88b1!2sInstitut%20Teknologi%20Sepuluh%20Nopember!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid",
-                mapsLink: "https://maps.app.goo.gl/r634nKLa74u98D4U6",
-                akses: [
-                    { tempat: "Gerbang Belakang Kampus ITS", jarak: "± 2 Menit" },
-                    { tempat: "Universitas Hang Tuah", jarak: "± 5 Menit" },
-                    { tempat: "Politeknik Elektronika (PENS)", jarak: "± 4 Menit" },
-                    { tempat: "Pakuwon City Mall", jarak: "± 8 Menit" }
-                ]
+            "6": {
+                nama: "Hananny MA1 (Hananny VI - Coming Soon)",
+                alamat: "Depan UPN",
+                jumlahKamar: 27,
+                status: "Penuh",
+                kondisiFisik: "Proses pembangunan unit prima selangkah tepat di depan pintu gerbang utama UPN.",
+                fasilitasTerlengkap: "Fasilitas Belajar Mahasiswa Lengkap, Kamar Mandi Dalam, WiFi Kuat.",
+                biayaBersahabat: "Segera Hadir (Kuota Terbatas)",
+                cabangTerpilihInfo: "Cabang Terstrategis Khusus Mahasiswa Baru UPN",
+                mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.2500000000002!2d112.789900!3d-7.326000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMTknMzMuNiJTIDExMsKwNDcnMjMuNiJF!5e0!3m2!1sid!2sid!4v1710000000005!5m2!1sid!2sid"
             }
         };
 
-        // Render catalog grid dan opsi dropdown formulir secara dinamis
-        function renderJaringanKost() {
-            const container = document.getElementById('cabang-grid-container');
-            const dropdown = document.getElementById('branch');
-            const heroList = document.getElementById('hero-branches-list');
-            
-            if (!container || !dropdown || !heroList) return;
+        // RUN AWAL KETIKA HALAMAN SELESAI DIMUAT
+        window.addEventListener("DOMContentLoaded", () => {
+            updateTampilanPublik();
+            initOptions();
+            onSelectCabangChange(); // Prefill input di panel owner
+        });
 
-            // Reset Konten
-            container.innerHTML = '';
-            heroList.innerHTML = '';
-            dropdown.innerHTML = '<option value="" disabled selected>Pilih Cabang Kos</option>';
+        // 1. RENDER KATALOG INTERFACE UMUM SECARA DINAMIS
+        function updateTampilanPublik() {
+            const container = document.getElementById("containerKatalog");
+            container.innerHTML = "";
 
-            // Loop 1 - 7 Cabang
-            for (let i = 1; i <= 7; i++) {
-                const cab = cabangData[i];
-                if (!cab) continue;
-
-                // 1. Render Catalog Cards
-                let badgeClass = 'bg-green-500/10 text-green-600';
-                let dotClass = 'bg-green-500';
-                if (cab.statusColor === 'amber') {
-                    badgeClass = 'bg-amber-500/10 text-amber-600';
-                    dotClass = 'bg-amber-500';
-                } else if (cab.statusColor === 'red') {
-                    badgeClass = 'bg-red-500/10 text-red-600';
-                    dotClass = 'bg-red-500';
-                }
-
-                // Compile tag html
-                let tagsHtml = '';
-                cab.tags.forEach(tag => {
-                    tagsHtml += `<span class="text-[9px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded-md font-medium">${tag}</span>`;
-                });
+            for (let id in databaseCabang) {
+                const item = databaseCabang[id];
+                
+                // Menentukan badge warna status ketersediaan
+                let badgeClass = "badge-tersedia";
+                if(item.status === "Penuh") badgeClass = "badge-penuh";
+                else if(item.status === "Terbatas") badgeClass = "badge-penuh" // bisa dikustom warna lain jika perlu
 
                 const cardHtml = `
-                    <div class="bg-white border border-slate-100 rounded-3xl p-5 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
-                        <div class="space-y-4">
-                            <div class="flex justify-between items-start">
-                                <span class="bg-brand-100 text-brand-700 text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-lg">${cab.tagArea}</span>
-                                <span class="${badgeClass} text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center">
-                                    <span class="w-1.5 h-1.5 rounded-full ${dotClass} mr-1"></span>${cab.status}
-                                </span>
+                    <div class="card-cabang">
+                        <div class="card-header">
+                            <h3 class="card-title">${item.nama}</h3>
+                            <span class="card-badge ${badgeClass}">${item.status} (${item.jumlahKamar} Kamar)</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="badge-info-cabang">⭐️ ${item.cabangTerpilihInfo}</div>
+                            <div class="info-row">
+                                <span class="info-label">📍 Alamat Fisik Gedung:</span>
+                                <span class="info-value">${item.alamat}</span>
                             </div>
-                            <div>
-                                <h3 class="font-extrabold text-slate-900 text-base md:text-lg">${cab.nama}</h3>
-                                <p class="text-slate-500 text-xs mt-1 leading-relaxed"><i class="fa-solid fa-map-pin mr-1 text-slate-400"></i> ${cab.alamat}</p>
+                            <div class="info-row">
+                                <span class="info-label">✨ Kondisi Fisik Kamar:</span>
+                                <span class="info-value">${item.kondisiFisik}</span>
                             </div>
-                            <div class="pt-3 border-t border-slate-100 flex justify-between items-center text-xs">
-                                <span class="text-slate-500">Harga Mulai</span>
-                                <span class="font-extrabold text-brand-600 text-sm">Rp ${cab.harga} <span class="text-[9px] font-medium text-slate-400">/bln</span></span>
+                            <div class="info-row">
+                                <span class="info-label">🛏️ Standar Fasilitas Lengkap:</span>
+                                <span class="info-value">${item.fasilitasTerlengkap}</span>
                             </div>
-                            <div class="flex flex-wrap gap-1.5 pt-1">
-                                ${tagsHtml}
+                            <div class="info-row">
+                                <span class="info-label">💰 Biaya Sewa Bersahabat:</span>
+                                <span class="info-value" style="font-weight:700; color:#0d9488;">${item.biayaBersahabat}</span>
                             </div>
                         </div>
-                        <div class="grid grid-cols-2 gap-2 mt-6">
-                            <button onclick="switchLocation(${cab.id})" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold py-2 px-3 rounded-xl transition-all flex items-center justify-center space-x-1">
-                                <i class="fa-solid fa-map-location-dot"></i>
-                                <span>Peta</span>
-                            </button>
-                            <a href="#survey-form" onclick="selectCabangForm('${cab.nama}')" class="bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold py-2 px-3 rounded-xl transition-all text-center">
-                                ${cab.status === 'Penuh' ? 'Waiting List' : 'Survey'}
-                            </a>
+                        <div class="card-footer">
+                            <button class="btn btn-sm" style="width:100%;" onclick="muatPetaCabang('${id}')">🗺️ Lihat Peta Lokasi</button>
                         </div>
                     </div>
                 `;
-                container.insertAdjacentHTML('beforeend', cardHtml);
-
-                // 2. Render Hero Side Preview (3 Cabang Pertama saja)
-                if (i <= 3) {
-                    let heroBadgeHtml = `<span class="text-[10px] bg-green-500/20 text-green-400 font-bold px-2 py-0.5 rounded">Tersedia</span>`;
-                    if (cab.statusColor === 'amber') {
-                        heroBadgeHtml = `<span class="text-[10px] bg-amber-500/20 text-amber-400 font-bold px-2 py-0.5 rounded">${cab.status}</span>`;
-                    } else if (cab.statusColor === 'red') {
-                        heroBadgeHtml = `<span class="text-[10px] bg-red-500/20 text-red-400 font-bold px-2 py-0.5 rounded">Penuh</span>`;
-                    }
-
-                    const heroItemHtml = `
-                        <div class="flex items-center justify-between p-2.5 bg-slate-950/40 border border-slate-800/60 rounded-xl">
-                            <div class="flex items-center space-x-2.5">
-                                <div class="bg-brand-500/20 text-brand-400 w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold">${cab.id}</div>
-                                <span class="text-xs font-extrabold text-slate-100">${cab.nama}</span>
-                            </div>
-                            ${heroBadgeHtml}
-                        </div>
-                    `;
-                    heroList.insertAdjacentHTML('beforeend', heroItemHtml);
-                }
-
-                // 3. Render Form Dropdown Options
-                const optionHtml = `<option value="${cab.nama}">Cabang ${cab.id}: ${cab.nama}</option>`;
-                dropdown.insertAdjacentHTML('beforeend', optionHtml);
+                container.innerHTML += cardHtml;
             }
+            hitungSimulasi();
         }
 
-        // Muat Data Cabang yang dipilih oleh Owner ke dalam Input Form Owner Panel
-        function loadCabangToForm() {
-            const selectId = document.getElementById('owner-edit-cabang-select').value;
-            const cab = cabangData[selectId];
-            if (!cab) return;
-
-            document.getElementById('edit-cab-nama').value = cab.nama;
-            document.getElementById('edit-cab-tag').value = cab.tagArea;
-            document.getElementById('edit-cab-alamat').value = cab.alamat;
-            document.getElementById('edit-cab-harga').value = cab.harga;
-            document.getElementById('edit-cab-status').value = cab.status;
-            document.getElementById('edit-cab-status-color').value = cab.statusColor;
-            document.getElementById('edit-cab-tags-list').value = cab.tags.join(', ');
-            document.getElementById('edit-cab-maps-embed').value = cab.mapsEmbed;
-            document.getElementById('edit-cab-maps-link').value = cab.mapsLink;
-
-            // Muat 4 akses terdekat
-            for (let i = 1; i <= 4; i++) {
-                const aksesObj = cab.akses[i - 1] || { tempat: '', jarak: '' };
-                document.getElementById(`edit-cab-akses-t${i}`).value = aksesObj.tempat;
-                document.getElementById(`edit-cab-akses-j${i}`).value = aksesObj.jarak;
-            }
-        }
-
-        // Perbarui data cabang di database sementara/memori
-        function updateCabangData() {
-            const selectId = document.getElementById('owner-edit-cabang-select').value;
-            const cab = cabangData[selectId];
-            if (!cab) return;
-
-            cab.nama = document.getElementById('edit-cab-nama').value.trim();
-            cab.tagArea = document.getElementById('edit-cab-tag').value.trim();
-            cab.alamat = document.getElementById('edit-cab-alamat').value.trim();
-            cab.harga = document.getElementById('edit-cab-harga').value.trim();
-            cab.status = document.getElementById('edit-cab-status').value;
-            cab.statusColor = document.getElementById('edit-cab-status-color').value;
+        // INITIALIZE OPTION LIST FORMULIR & KALKULATOR
+        function initOptions() {
+            const calcSelect = document.getElementById("calcCabang");
+            const formSelect = document.getElementById("formCabang");
             
-            // Proses 3 tag fasilitas dari koma
-            const rawTags = document.getElementById('edit-cab-tags-list').value;
-            cab.tags = rawTags.split(',').map(t => t.trim()).filter(t => t !== '');
+            calcSelect.innerHTML = "";
+            formSelect.innerHTML = "";
 
-            cab.mapsEmbed = document.getElementById('edit-cab-maps-embed').value.trim();
-            cab.mapsLink = document.getElementById('edit-cab-maps-link').value.trim();
+            for (let id in databaseCabang) {
+                let opt = document.createElement("option");
+                opt.value = id;
+                opt.textContent = databaseCabang[id].nama;
+                calcSelect.appendChild(opt);
 
-            // Ambil data 4 akses terdekat
-            cab.akses = [];
-            for (let i = 1; i <= 4; i++) {
-                const tempat = document.getElementById(`edit-cab-akses-t${i}`).value.trim();
-                const jarak = document.getElementById(`edit-cab-akses-j${i}`).value.trim();
-                if (tempat) {
-                    cab.akses.push({ tempat, jarak });
-                }
+                let optForm = document.createElement("option");
+                optForm.value = id;
+                optForm.textContent = databaseCabang[id].nama;
+                formSelect.appendChild(optForm);
             }
-
-            // Render ulang komponen visual web agar langsung berubah di depan mata!
-            renderJaringanKost();
-            switchLocation(selectId); // Perbarui peta ke cabang yang baru diedit
-
-            // Beri notifikasi toast keberhasilan
-            showToast("Data Cabang Berhasil Diperbarui secara Instan!");
         }
 
-        // Tampilkan pesan popup toast
-        function showToast(message) {
-            const toast = document.createElement('div');
-            toast.className = 'fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-green-600 text-white px-6 py-3 rounded-xl shadow-lg font-bold text-xs flex items-center space-x-2 animate-bounce';
-            toast.innerHTML = `<i class="fa-solid fa-circle-check"></i> <span>${message}</span>`;
-            document.body.appendChild(toast);
-            setTimeout(() => toast.remove(), 3000);
-        }
-
-        // Switch Maps Location aktif dari katalog cabang
-        function switchLocation(id) {
-            const data = cabangData[id];
-            if (!data) return;
-
-            // Update Iframe Peta
-            document.getElementById('google-maps-embed').src = data.mapsEmbed;
-
-            // Update Label Detail Lokasi
-            document.getElementById('label-cabang').textContent = data.nama;
-            document.getElementById('label-alamat').textContent = data.alamat;
-            document.getElementById('btn-directions').href = data.mapsLink;
-
-            // Update List Jarak Akses Terdekat
-            const listContainer = document.getElementById('akses-list');
-            listContainer.innerHTML = '';
+        // 2. FUNGSI SWITCHER PETA INTERAKTIF PUBLIK
+        function muatPetaCabang(id) {
+            const item = databaseCabang[id];
+            document.getElementById("activeMapTitle").innerHTML = `Menampilkan Lokasi: <span style="color:#0d9488;">${item.nama}</span><br><small style="font-weight:normal;color:#64748b;">${item.alamat}</small>`;
             
-            data.akses.forEach(item => {
-                const row = document.createElement('div');
-                row.className = 'flex items-center justify-between text-xs';
-                row.innerHTML = `
-                    <span class="text-slate-300"><i class="fa-solid fa-graduation-cap text-brand-400 mr-2"></i> ${item.tempat}</span>
-                    <span class="font-bold text-teal-400">${item.jarak}</span>
-                `;
-                listContainer.appendChild(row);
-            });
-
-            // Gulir halaman ke maps secara halus
-            document.getElementById('lokasi').scrollIntoView({ behavior: 'smooth' });
+            const wrapper = document.getElementById("mapWrapper");
+            wrapper.innerHTML = `<iframe src="${item.mapUrl}" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`;
+            
+            // Auto-scroll halus ke area peta di mobile agar langsung kelihatan
+            wrapper.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
 
-        // Autoselect dropdown cabang pada formulir survey
-        function selectCabangForm(value) {
-            const selectEl = document.getElementById('branch');
-            if (selectEl) {
-                selectEl.value = value;
-            }
-        }
+        // 3. FUNGSI KALKULATOR SAKU SIMULASI MAHASISWA
+        function hitungSimulasi() {
+            const id = document.getElementById("calcCabang").value;
+            const biayaMakanHarian = parseInt(document.getElementById("calcMakan").value) || 0;
+            const item = databaseCabang[id];
 
-        // Switch active tab di dalam Owner Panel
-        function switchOwnerTab(tabName) {
-            const tabUmum = document.getElementById('tab-content-umum');
-            const tabCabang = document.getElementById('tab-content-cabang');
-            const btnUmum = document.getElementById('tab-btn-umum');
-            const btnCabang = document.getElementById('tab-btn-cabang');
-
-            if (tabName === 'umum') {
-                tabUmum.classList.remove('hidden');
-                tabCabang.classList.add('hidden');
-                btnUmum.className = "text-xs font-extrabold px-4 py-2 bg-brand-600 text-white rounded-xl transition-all";
-                btnCabang.className = "text-xs font-extrabold px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl transition-all";
-            } else {
-                tabUmum.classList.add('hidden');
-                tabCabang.classList.remove('hidden');
-                btnUmum.className = "text-xs font-extrabold px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl transition-all";
-                btnCabang.className = "text-xs font-extrabold px-4 py-2 bg-brand-600 text-white rounded-xl transition-all";
-                loadCabangToForm(); // pastikan data terisi pertama kali
-            }
-        }
-
-        // Alur Autentikasi / Verifikasi PIN Owner
-        function requestOwnerAuth() {
-            document.getElementById('auth-modal').classList.remove('hidden');
-            document.getElementById('auth-pin').value = '';
-            document.getElementById('auth-pin').focus();
-        }
-
-        function closeOwnerAuth() {
-            document.getElementById('auth-modal').classList.add('hidden');
-        }
-
-        function verifyOwnerPIN() {
-            const enteredPin = document.getElementById('auth-pin').value;
-            const correctPin = document.getElementById('owner-pin').value || '1234';
-
-            if (enteredPin === correctPin) {
-                closeOwnerAuth();
-                toggleOwnerPanel(true);
-                showToast("Akses Pemilik Terverifikasi! Membuka Panel.");
-            } else {
-                // PIN Salah
-                const pinInput = document.getElementById('auth-pin');
-                pinInput.classList.add('border-red-500', 'animate-shake');
-                pinInput.value = '';
-                setTimeout(() => pinInput.classList.remove('border-red-500', 'animate-shake'), 800);
-            }
-        }
-
-        // Toggle visibility Owner Panel
-        function toggleOwnerPanel(show) {
-            const panel = document.getElementById('owner-panel');
-            if (show) {
-                panel.classList.remove('hidden');
-            } else {
-                panel.classList.add('hidden');
-            }
-        }
-
-        // Simpan seluruh data Pengaturan Umum Owner
-        function saveOwnerSettings() {
-            const waNum = document.getElementById('owner-wa').value.trim();
-            const gdriveLink = document.getElementById('owner-gdrive').value.trim();
-            const mapsLink = document.getElementById('owner-maps').value.trim();
-
-            // Update nomor di footer & tautan rute
-            if (waNum) {
-                document.getElementById('footer-wa-label').textContent = '+' + waNum.replace(/(\d{2})(\d{3})(\d{4})(\d{4})/, '$1 $2-$3-$4');
-            }
-            if (gdriveLink) {
-                document.getElementById('gdrive-photo-link').href = gdriveLink;
-            }
-            if (mapsLink) {
-                document.getElementById('btn-directions').href = mapsLink;
-                // update default rute cabang 1
-                cabangData[1].mapsLink = mapsLink;
-            }
-
-            // Ganti pratinjau foto utama jika tautan kustom diisi
-            for (let i = 1; i <= 5; i++) {
-                const urlVal = document.getElementById(`url-kamar-${i}`).value.trim();
-                if (urlVal && !urlVal.startsWith('[Foto Lokal]')) {
-                    const imgEl = document.getElementById(`img-kamar-${i}`);
-                    if (imgEl) imgEl.src = urlVal;
+            // Membersihkan teks angka sewa kos untuk dihitung (ekstrak nominal)
+            let hargaSewaAngka = 0;
+            if (item && item.biayaBersahabat) {
+                let cleanString = item.biayaBersahabat.replace(/[^0-8]/g, ''); // Ambil digit angka
+                if(cleanString.length > 3) {
+                    hargaSewaAngka = parseInt(cleanString);
+                } else {
+                    hargaSewaAngka = 800000; // Default fallback jika status sewa "Coming Soon"
                 }
             }
 
-            showToast("Seluruh Pengaturan Umum Berhasil Diaplikasikan!");
-            toggleOwnerPanel(false);
+            const totalBulanan = hargaSewaAngka + (biayaMakanHarian * 30);
+            
+            // Format Mata Uang Rupiah
+            const formatter = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 });
+            document.getElementById("calcTotal").textContent = `Total Estimasi: ${formatter.format(totalBulanan)} / Bulan`;
         }
 
-        // Preview local image upload
-        function previewLocalImage(input, imgElementId) {
-            if (input.files && input.files[0]) {
-                const file = input.files[0];
-                const localUrl = URL.createObjectURL(file);
-                const targetImg = document.getElementById(imgElementId);
-                if (targetImg) targetImg.src = localUrl;
+        // 4. AUTOMATION REKAP DATA & SINKRONISASI WHATSAPP FORMULIR
+        function kirimFormWhatsApp(e) {
+            e.preventDefault();
+            
+            const nama = document.getElementById("formNama").value;
+            const kontak = document.getElementById("formKontak").value;
+            const idCabang = document.getElementById("formCabang").value;
+            const tanggal = document.getElementById("formTanggal").value;
+            const jam = document.getElementById("formJam").value;
+            const catatan = document.getElementById("formCatatan").value || "-";
+            
+            const cabangTerpilih = databaseCabang[idCabang].nama;
 
-                const photoNum = imgElementId.split('-').pop();
-                const textInput = document.getElementById(`url-kamar-${photoNum}`);
-                if (textInput) {
-                    textInput.value = `[Foto Lokal]: ${file.name}`;
-                    textInput.classList.add('text-green-400');
-                }
+            // Merakit draft teks pesan terstruktur rapi
+            const teksPesan = `Halo Jaringan Hananny Kost Group,\n\nSaya ingin mengajukan *Request Survey / Booking Cabang* dengan detail data berikut:\n\n👤 *Nama Lengkap:* ${nama}\n📞 *No. WhatsApp:* ${kontak}\n📍 *Pilihan Cabang:* ${cabangTerpilih}\n📅 *Rencana Tanggal:* ${tanggal}\n⏰ *Rencana Jam Kedatangan:* ${jam} WIB\n📝 *Catatan Khusus:* ${catatan}\n\nMohon untuk dikonfirmasi ketersediaan kamarnya kembali, Terima kasih admin!`;
+
+            // Redirect buka aplikasi WhatsApp secara instan
+            const linkWa = `https://api.whatsapp.com/send?phone=${nomorWhatsAppOwner}&text=${encodeURIComponent(teksPesan)}`;
+            window.open(linkWa, '_blank');
+        }
+
+        // ========================================================
+        // 5. INTERFACE KHUSUS OWNER (ADMIN PANEL - PIN BYPASS MODE)
+        // ========================================================
+        function openOwnerPanel() {
+            // VERIFIKASI PIN SEKARANG SUDAH DIHAPUS SEPENUHNYA SESUAI REQUEST
+            document.getElementById("ownerPanel").classList.add("active");
+        }
+
+        function closeOwnerPanel() {
+            document.getElementById("ownerPanel").classList.remove("active");
+        }
+
+        // LOAD DATA CABANG KE FORM KETIKA DROPDOWN DI PANEL DIUBAH
+        function onSelectCabangChange() {
+            const selectedId = document.getElementById("selectCabang").value;
+            const cabang = databaseCabang[selectedId];
+
+            if (cabang) {
+                document.getElementById("editNamaGedung").value = cabang.nama || "";
+                document.getElementById("editAlamat").value = cabang.alamat || "";
+                document.getElementById("editJumlahKamar").value = cabang.jumlahKamar || 0;
+                document.getElementById("editStatusKamar").value = cabang.status || "Tersedia";
+                
+                // Isi nilai 4 kolom edit baru permintaan user
+                document.getElementById("editKondisiFisik").value = cabang.kondisiFisik || "";
+                document.getElementById("editFasilitasTerlengkap").value = cabang.fasilitasTerlengkap || "";
+                document.getElementById("editBiayaBersahabat").value = cabang.biayaBersahabat || "";
+                document.getElementById("editCabangTerpilih").value = cabang.cabangTerpilihInfo || "";
             }
         }
 
-        // Toggle mobile navigation menu
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        // SIMPAN PERUBAHAN MANUAl DARI OWNER PANEL KE DATABASE MEMORI WEB
+        function simpanPerubahanCabang() {
+            const selectedId = document.getElementById("selectCabang").value;
+            
+            if (databaseCabang[selectedId]) {
+                // Simpan data dasar
+                databaseCabang[selectedId].nama = document.getElementById("editNamaGedung").value;
+                databaseCabang[selectedId].alamat = document.getElementById("editAlamat").value;
+                databaseCabang[selectedId].jumlahKamar = parseInt(document.getElementById("editJumlahKamar").value) || 0;
+                databaseCabang[selectedId].status = document.getElementById("editStatusKamar").value;
+                
+                // Simpan data 4 kolom kustom baru
+                databaseCabang[selectedId].kondisiFisik = document.getElementById("editKondisiFisik").value;
+                databaseCabang[selectedId].fasilitasTerlengkap = document.getElementById("editFasilitasTerlengkap").value;
+                databaseCabang[selectedId].biayaBersahabat = document.getElementById("editBiayaBersahabat").value;
+                databaseCabang[selectedId].cabangTerpilihInfo = document.getElementById("editCabangTerpilih").value;
 
-        // Setup dan Inisialisasi awal saat halaman termuat
-        window.onload = function() {
-            renderJaringanKost();
-            switchLocation(1); // Set peta ke Rungkut Asri Timur secara default
+                // Sinkronisasi WA global jika diubah oleh owner
+                nomorWhatsAppOwner = document.getElementById("editGlobalWA").value || "6281357036283";
 
-            // Isi nilai awal kolom input foto pada Owner Panel
-            for (let i = 1; i <= 5; i++) {
-                const imgEl = document.getElementById(`img-kamar-${i}`);
-                const inputEl = document.getElementById(`url-kamar-${i}`);
-                if (imgEl && inputEl) {
-                    inputEl.value = imgEl.src;
-                }
+                // Update UI Publik secara realtime instan
+                updateTampilanPublik();
+                initOptions();
+                document.getElementById("formCabang").value = selectedId;
+                document.getElementById("calcCabang").value = selectedId;
+                
+                alert("🎉 Sukses! Perubahan data " + databaseCabang[selectedId].nama + " telah disimpan dan langsung diterapkan di website.");
+                closeOwnerPanel();
             }
-
-            // Hubungkan enter key pada modal PIN
-            document.getElementById('auth-pin').addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    verifyOwnerPIN();
-                }
-            });
         }
     </script>
 </body>
